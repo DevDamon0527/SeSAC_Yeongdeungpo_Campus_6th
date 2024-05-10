@@ -19,7 +19,8 @@ console.log(text + text2);
 console.log(text + '저는 Damon 입니다. 저의 성별은' + gender + '입니다!'); // 문자열 연결
 console.log(text, text2, '야호');
 
-// 템플릿 리터럴(ES6) 백틱(`)와 달러($), 중괄호({}) 조합으로 사용한다.
+// 템플릿 리터럴 (= 문자를 표현하는 새로운 문법) 
+// (ES6) 백틱(`)와 달러($), 중괄호({}) 조합으로 사용한다.
 // - 문자열 내에서 변수와 상수를 간결히 표현
 console.log(`${text} 저는 Damon 입니다. 저의 성별은 ${gender} 입니다!.`);
 
@@ -200,7 +201,8 @@ let str3 = undefined; // undefined
 console.log(String(str1), typeof String(str1)); // true string
 console.log(String(str2), typeof String(str2)); // 123 string
 console.log(String(str3), typeof String(str3)); // undefined string
-console.log(str1.toString(), typeof str1.toString()); // true string
+console.log(str1.toString(), typeof str1.toString()); // true 
+// 값을 문자열로 변환 (참고)
 
 // #2. Number(): 숫자로 형변환
 let n1 = true;
@@ -212,6 +214,7 @@ console.log(Number(n2), typeof Number(n2)); // 0
 console.log(Number(n3), typeof Number(n3)); // 123.9
 console.log(parseInt(n3, 10)); // n3 값을 10진수의 정수(int)로 바꾸겠다. // 123
 console.log(parseFloat(n3)); // n3 값을 실수(float)로 바꾸겠다. // 123.9
+// 객체의 메서드 호출 -> 문자열로 변환 (참고)
 
 // +) null, undefined를 숫자로 바꾼다면? - 같이 해보자!
 console.log(Number(undefined), typeof Number(undefined)); // NaN, number
