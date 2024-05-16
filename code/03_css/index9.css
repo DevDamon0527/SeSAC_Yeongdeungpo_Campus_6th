@@ -1,0 +1,29 @@
+.dog {
+    /* 원래 위치를 파악하기 위한 배경색 */
+    background-color: red;
+    width: 230px;
+    height: 230px;
+
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+img {
+    /* 
+        크기의 단위로 %를 사용
+        : 부모 요소의 n% 차지
+    */
+    width: 100%;
+    height: 100%;
+}
+
+img:hover {
+    /* 
+        transition 속성 
+        - transform 속성과 함께 자주 쓰인다.
+        - CSS 속성값이 변화 할 때 일정 시간동안 변화가 일어나도록
+        => img에 hover를 했을 때 transform에 적힌 속성 값이 n초 동안 변화가 있게 한다.
+    */
+    transition: transform 1s;    
+}
