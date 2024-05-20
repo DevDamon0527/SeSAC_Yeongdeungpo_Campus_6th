@@ -1,0 +1,21 @@
+.d-inline1 {
+    display: inline;
+    background-color: blue;
+}
+
+.d-inline2 {
+    display: inline;
+    background-color: red;
+}
+
+.d-block1 {
+    display: block;
+    background-color: blue;
+    width: 500px;
+}
+
+.d-block2 {
+    display: block;
+    background-color: red;
+    width: 400px;
+}

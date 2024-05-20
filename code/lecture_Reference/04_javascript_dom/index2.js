@@ -1,0 +1,97 @@
+// js 표준 내장 객체
+// - 기본적으로 미리 정의된 객체.
+// - 모든 JS 환경에서 사용할 수 있는 내장 객체들을 말한다.
+// - 자주 사용되는 기능을 미리 구현해 놓은 것.
+
+// #1. Date 객체 : 시간, 날짜
+
+// 날짜 생성하여 저장.
+let now = new Date();
+console.log(now);
+
+// 타임스탬프 (timestamp)
+// : 1970년 1월 1일을 기준으로 흘러간 밀리초(ms)를 나타내는 정수 - "에포크" 이후의 시간을 나타냄.
+// --- 참고)
+// Q) why? 이 시간 이후인가요?
+// A) 1. 역사적인 이유 - 유닉스 OS에서 타임스탬프를 측정하는데 사용된 날짜 초기 컴퓨터 시간 나타냄
+//    2. 기술적인 편의성 - 시간을 숫자로 표현하는 방법. 수학적으로 편리한 계산을 가능하게함.
+// new Date(timestamp)
+let jan_01_1970 = new Date(0);
+console.log(jan_01_1970);
+
+let jan_02_1970 = new Date(24 * 3600 * 1000);
+console.log(jan_02_1970);
+
+// new Date(date_string)
+let date = new Date('2024-05-10');
+console.log('date >', date);
+
+let date2 = new Date('2024','05','10'); // MM(0(1월)~11(12월) 주의)
+console.log('date2 >', date2);
+
+// 관련 메서드
+
+console.log(now.getFullYear());
+console.log(now.getMonth() + 1); // 0 ~ 11 주의
+console.log(now.getDate());
+console.log(now.getHours());
+console.log(now.getMinutes());
+console.log(now.getSeconds());
+console.log(now.getMilliseconds());
+console.log(now.getDay()); // 0(일) ~ 6(토)
+
+// 퀴즈
+// Date 객체를 이용해 오늘 요일을 얻고, (힌트. getDay())
+// if or switch 구문 이용해서 평일/주말인지 콘솔창에 출력하는 코드 작성
+
+// 퀴즈 답안
+/*
+const date3 = new Date();
+const dayOfWeek = date3.getDay();
+
+// 0은 일요일, 1은 월요일, ..., 6은 토요일을 나타냅니다.
+
+if (dayOfWeek === 0 || dayOfWeek === 6) {
+    console.log("주말입니다.");
+} else {
+    console.log("평일입니다.");
+}
+*/
+
+// console.clear();
+
+// Math 객체
+// 수학적인 상수와 함수
+
+// 속성
+console.log(Math.E); // 자연로그
+console.log(Math.PI); // 파이
+console.log(Math.SQRT2); // 2의 제곱근
+
+// 메서드
+console.log(Math.min(100, -2, 0, 5));
+console.log(Math.max(100, -2, 0, 5));
+console.log(Math.round(5.3124)); // 반올림
+console.log(Math.ceil(5.3124)); // 올림
+console.log(Math.floor(5.7124)); // 내림
+console.log(Math.random()); // 0 <= x < 1 범위의 난수
+
+// Math.random() 응용 예시
+// 0 ~ 9
+console.log(Math.floor(Math.random() * 10)); // 0 <= x < 10
+
+// 0 ~ 10
+console.log(Math.floor(Math.random() * 11)); // 0 <= x < 11
+
+// 퀴즈
+// 1 ~ 100
+// 20 ~ 22
+
+// 퀴즈 답안
+/*
+// 1 ~ 100 사이의 난수 생성
+const randomNum = Math.floor(Math.random() * 100) + 1;
+
+// 20 ~ 22 사이의 난수 생성
+const randomNum2 = Math.floor(Math.random() * 3) + 20;
+*/
