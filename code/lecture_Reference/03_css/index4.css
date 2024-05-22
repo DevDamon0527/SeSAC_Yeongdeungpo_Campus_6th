@@ -88,8 +88,14 @@ input:focus {
 .box::after {
     content: '빨리!!';
     font-weight: bold;
-    color: blue !important;
+    color: blue !important
 }
+.box::after {
+    content: '빨리!!';
+    font-weight: bold;
+    color: yellowgreen
+}
+
 
 /*  */
 
