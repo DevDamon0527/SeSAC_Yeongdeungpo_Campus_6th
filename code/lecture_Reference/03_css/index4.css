@@ -48,6 +48,11 @@ input:focus {
     background-color: red;
 }
 
+/* (참고) div: 적용 안됨. */
+/* .zoo > div:first-child{
+    background-color: blueviolet;
+} */
+
 /* E:not(XYZ) : XYZ가 아닌 요소 선택 */
 .zoo > *:not(div) {
     background-color: pink;
@@ -58,6 +63,19 @@ input:focus {
     background-color: aqua;
 }
 
+/* 가상요소 : before, after */
+/* 
+    - HTML 문서의 특정 부분을 스타일링하기 위해 사용.
+    - 실제로 HTML 문서에 존재하지 않는 부분이지만 CSS를 통해 스타일 적용이 가능.
+
+    (참고)
+    * Q) 가상클래스 : 와 가상요소 :: 차이?
+    A) 
+    CSS 사양이 발전하면서 가상클래스와 가상 요소를 명확하게 구분할 필요성이 생김.
+    가상 클래스는 – 문서의 기존 요소 상태를 나타냄.
+    가상 요소는 문서의 특정 부분을 생성하여 스타일링함.
+    그렇기에 구분하기 위해 :: 로 표기하는 새로운 표기법을 도입.
+*/
 
 /* 실습 문제 */
 /* Q1) before, after */
@@ -73,6 +91,8 @@ input:focus {
     color: blue !important;
 }
 
+/*  */
+
 /* Q2) LMS 가상선택자 실습 풀이 */
 [disabled] {
     background-color: red;
@@ -85,3 +105,4 @@ input:focus {
 input:not([placeholder]) {
     background-color: blue;
 }
+/* css도 나중에 적힌게 입혀진다. */

@@ -1,6 +1,7 @@
 /* 하위(후손) 선택자: 공백(띄어쓰기) */
 body section {
     /* 경계선(테두리): 두께 선스타일 선색상 */
+    border: 1px solid blue;
 }
 
 body section h2 {
@@ -19,14 +20,14 @@ body section h2 {
 }
 
 /* 인접 형제 선택자 : + */
-/* 주의) kongG 라는 아이디를 갖는 요소 바로 뒤에 li 태그가 있어야만 적용 */
+/* 주의) magnetic 라는 아이디를 갖는 요소 바로 뒤에 li 태그가 있어야만 적용 */
 
-#kongG + li {
+#magnetic + li {
     background-color: aqua;
 }
 
 /* 일반 형제 선택자: ~ */
-#kongG ~ li {
+#magnetic ~ li {
     /* color: red; */
     /* color: #ff0000;  */
     color: rgb(255, 0, 0);
