@@ -1,21 +1,36 @@
 .d-inline1 {
     display: inline;
-    background-color: blue;
+    background-color: lightblue;
+    /* width: 1000px; */
 }
 
 .d-inline2 {
     display: inline;
-    background-color: red;
+    background-color: lightcoral;
 }
 
 .d-block1 {
     display: block;
-    background-color: blue;
+    background-color: lightblue;
     width: 500px;
 }
 
 .d-block2 {
     display: block;
-    background-color: red;
+    background-color: lightcoral;
     width: 400px;
+}
+
+.d-inline-block1 {
+    display: inline-block;
+    background-color: blue;
+}
+
+.d-inline-block2 {
+    display: inline-block;
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    /* margin: 20px; */
+    margin: 20px 40px;
 }

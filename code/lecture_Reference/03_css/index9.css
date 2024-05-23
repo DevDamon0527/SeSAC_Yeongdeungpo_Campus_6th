@@ -28,7 +28,7 @@ img:hover {
         - x, y 동시 사용원하는 경우
             - skew(x_deg, y_deg)
     */
-    /* transform: skewX(30deg); */
+    transform: skewX(30deg);
     /* transform: skewY(-30deg) */
     /* transform: skew(30deg, 30deg) */
 

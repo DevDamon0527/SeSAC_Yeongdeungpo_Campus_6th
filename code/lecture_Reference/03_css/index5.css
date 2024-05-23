@@ -176,12 +176,6 @@ div {
     /* 박스모델 */
     /* box-sizing: content-box; */
     /* box-sizing: border-box; */
+    /* box.html 생성 */
 }
 
-/* box 모델 이해 안될 때 추가 예시 */
-.border-box-example {
-    width: 200px; /* 컨텐츠 영역의 너비 */
-    padding: 20px; /* 패딩 */
-    border: 2px solid black; /* 테두리 */
-    box-sizing:content-box; /* 박스 모델의 크기 계산 방식 */
-}
