@@ -24,6 +24,7 @@ div {
 .position-static {
     background-color: pink;
     position: static;
+    /* left: 100px; */
 }
 
 /* 

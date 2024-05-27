@@ -13,7 +13,7 @@
 
 .box {
     background-color: skyblue;
-    width: 400px;
+    width: 100px;
     height: 100px;
 
     /* overflow: visible; */
@@ -23,6 +23,6 @@
 
     /* overflow-y: visible; */
     /* overflow-y: hidden; */
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     /* overflow-y: auto; */
 }
