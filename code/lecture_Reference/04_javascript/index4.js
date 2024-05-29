@@ -226,7 +226,7 @@ console.log(Number(undefined), typeof Number(undefined)); // NaN, number
 console.log(Number(null), typeof Number(null)); // 0, number
 
 
-// 실습 문제 답안
+// * 실습 문제 답안
 // let mathScore = "77";
 // let engScore = "88";
 
