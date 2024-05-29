@@ -8,7 +8,8 @@
 // 함수 선언 방식
 // #1. 명시적 함수 선언 (=함수 선언문)
 // - 함수 이름과 매개변수를 명시하고 함수의 본문을 중괄호로 감싼다.
-// - 스크립트 어디에서든 호출 할 수 있다.
+// - 스크립트 어디에서든 호출 할 수 있다. (호이스팅 개념 = 함수 선언 전에 호출 가능)
+// - "function" 키워드를 사용하여 함수를 선언하는 방식이다.
 
 function helloWorld() {  // 함수 정의
     // return 키워드 생략 가능
@@ -28,8 +29,21 @@ console.log(helloWorld2());
 
 
 // #2. 함수 표현식 (Function Expression)
-// - 함수를 변수에 저장하는 형태.
-// - 변수가 선언된 이후에만 호출 할 수 있다.
+// - 변수에 익명 함수를 할당(저장)하는 형태.
+// - 변수가 선언된 이후에만 호출 할 수 있다. (호이스팅 되지만 에러 발생)
+
+// * 익명 함수
+// - 말 그대로 이름이 없는 함수 
+
+// -> 이름을 지정할 수도 있음.
+// - 이 경우 함수 이름은 내부에서만 사용 가능!
+// ex)
+// const sayHello = function hello() {
+//     console.log('Hello');
+//   };
+
+//   sayHello(); // 'Hello' 출력
+// hello(); // ReferenceError: hello is not defined
 
 const helloWorld3 = function() {
     // return 생략 가능

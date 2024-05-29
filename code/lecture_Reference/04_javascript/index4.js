@@ -112,6 +112,7 @@ console.log(korean[2]);
 // Quiz '나'만 뽑아 내려면?
 console.log(korean[0][1]); // 나
 
+// *반짝 실습
 // Quiz 1) '가자' 글씨 출력하기
 console.log(korean[0][0] + korean[2][2]); // 가자
 
@@ -168,6 +169,7 @@ const me = {
 
 console.log(me);
 
+// 다시 ppt
 
 // 8. typeof : 자료형을 확인할 수 있는 키워드
 // typeof X 형식
@@ -183,6 +185,7 @@ console.log(typeof undefined); // undefined
 console.log(typeof fruits); // object
 console.log(typeof cat); // object
 
+// 다시 ppt
 
 // 형변환
 // 성적 평균 구하는 프로그램 만들기.
@@ -231,3 +234,9 @@ console.log(Number(null), typeof Number(null)); // 0, number
 // let avgScore = (Number(mathScore) + Number(engScore)) / 2;
 
 // console.log("평균 점수:", avgScore);
+
+// * 재미적 *
+// let ex = 2
+// let am = 2
+// let s = 2
+// console.log(ex+am-s);

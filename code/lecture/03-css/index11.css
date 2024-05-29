@@ -57,6 +57,7 @@
         - flex-direction이 수직 정렬; 교차축 = row (가로)
 
         - stretch (default) : container의 교차축을 채우기 위해 늘림.
+        - 지금은 width, height가 지정되어 있어서 안됨.
             
         - flex-start : 교차축에 대하여 시작점으로 정렬.
         - flex-end : 교차축에 대하여 끝점으로 정렬.

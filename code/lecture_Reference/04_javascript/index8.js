@@ -82,7 +82,7 @@ while (true) {
 console.log('-----------');
 
 // # 구구단
-// - while 버전
+// - while 버전 해봤으니
 // let i = 2, j = 1;
 
 // while(i < 10) {
@@ -94,7 +94,8 @@ console.log('-----------');
 //     j = 1;
 // }
 
-// - for 버전
+// *실습*
+// - for 버전 해보라
 /*
 for (let i = 2; i <= 9; i++) {
     console.log(`${i}단:`);
