@@ -24,26 +24,18 @@ let n = 10; // 어떤 숫자까지 합을 구할지에 대한 n
 let sum = 0; // 합을 저장할 변수
 for (let i = 1; i <= n; i++) {
     // sum 변수에 값을 재할당 (이전 sum 변수의 값 + 현재 반복변수 i 값)
-    sum = sum + i; // sum += i
+    sum = sum + i; // sum += i -> 연산자 줄여쓰기
     // console.log(i,sum);
 }
 console.log(sum);
-console.log('-----------');
+console.log('----------- 1부터 n까지 합 -----------');
 
-// 배열, for문
-const fruits = ['사과', '배', '포도', '망고', '바나나'];
-console.log(fruits.length); // 배열의 요소 개수 = 배열 크기(길이)
-// console.log(fruits[0]);
-// console.log(fruits[1]);
-// console.log(fruits[2]);
-// console.log(fruits[3]); 이렇게 힘들잖아...
-for (let f = 0; f < fruits.length; f++) {
-    console.log(fruits[f]);
-}
-console.log('-----------');
-
+// ** 실습
 // 1 ~ 20 중에서 짝수일 때의 합 구하기
+// Hint) for문 / if문 조합하기
+
 let sum2 = 0; // 합을 의미하는 변수
+
 // Soultion
 // 1 ~ 20까지 숫자를 반복
 // 현재 반복 숫자가 짝수라면 sum2에 더하기.
@@ -57,7 +49,7 @@ for (let i = 1; i <= 20; i++) {
     }
 }
 
-console.log('-----------');
+console.log('------------ 1 ~ 20 중에서 짝수일 때의 합 --------------');
 
 // while 문
 let idx = 0;
@@ -65,7 +57,7 @@ while (idx < 10) {
     console.log('안녕', idx);
     idx = idx + 1;  // idx += 1
 }
-console.log('-----------');
+console.log('----------- while 문 -----------');
 
 let idx2 = 0;
 while (true) {
@@ -79,8 +71,8 @@ while (true) {
         break;
     }
 }
-console.log('-----------');
-
+console.log('----------- while 문 (무한루프) -----------');
+// ppt로 
 // # 구구단
 // - while 버전 해봤으니
 // let i = 2, j = 1;
@@ -105,6 +97,38 @@ for (let i = 2; i <= 9; i++) {
     console.log(); // 한 단 출력 후 줄바꿈
 }
 */
+
+// *번외) do ~ while문
+/**
+ * JavaScript에서 사용되는 반복문 중 하나로, 
+ * 조건이 참인지 여부에 상관없이 코드 블록을 최소 한 번 실행한 후 조건을 검사한다.
+ * 즉) 항상 코드 블록을 한 번 실행한 다음, 조건이 참인 동안 반복을 계속!
+ */
+
+// *구문
+/**
+ * do {
+        // 실행할 코드 내용
+    } while(조건);
+ */
+// Ex1)
+// let i = 1;
+
+// do {
+//     console.log(i);
+//     i++;
+// } while (i <= 5);
+// console.log("-------- do ~ while 구문 --------");
+
+// Ex2)
+// let number;
+
+// do {
+//     number = parseInt(prompt("숫자를 입력하세요 (10보다 큰 숫자):"), 10);
+// } while (number <= 10);
+
+// console.log("입력한 숫자:", number);
+// console.log("--------");
 
 
 // break & continue
@@ -152,7 +176,7 @@ for (let i = 1; i <= 5; i++) {
 //     }
 // }
 
-// 심화)
+// 심화) 실습 문제1의 + 문제
 // const userInput = parseInt(prompt("숫자를 입력하세요:"));
 
 // if (userInput) {

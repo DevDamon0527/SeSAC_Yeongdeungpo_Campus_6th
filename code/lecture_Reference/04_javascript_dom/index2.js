@@ -9,8 +9,9 @@
 let now = new Date();
 console.log(now);
 
-// 타임스탬프 (timestamp)
+// 참고) 타임스탬프 (timestamp)
 // : 1970년 1월 1일을 기준으로 흘러간 밀리초(ms)를 나타내는 정수 - "에포크" 이후의 시간을 나타냄.
+// Q) 에포크? - 특정 시간의 기준점
 // --- 참고)
 // Q) why? 이 시간 이후인가요?
 // A) 1. 역사적인 이유 - 유닉스 OS에서 타임스탬프를 측정하는데 사용된 날짜 초기 컴퓨터 시간 나타냄
@@ -30,6 +31,15 @@ let date2 = new Date('2024','05','10'); // MM(0(1월)~11(12월) 주의)
 console.log('date2 >', date2);
 
 // 관련 메서드
+// 객체 점 접근법
+// getDate(): 월의 몇 번째 날인지 반환합니다.
+// getDay(): 주의 몇 번째 날인지 반환합니다 (0부터 시작).
+// getMonth(): 몇 번째 달인지 반환합니다 (0부터 시작).
+// getHours(): 시간을 반환합니다 (0부터 23까지).
+// getMinutes(): 분을 반환합니다 (0부터 59까지).
+// getSeconds(): 초를 반환합니다 (0부터 59까지).
+// getMilliseconds(): 밀리초를 반환합니다 (0부터 999까지).
+// getTime(): 1970년 1월 1일부터 현재까지의 밀리초 단위의 시간을 반환합니다.
 
 console.log(now.getFullYear());
 console.log(now.getMonth() + 1); // 0 ~ 11 주의
@@ -40,7 +50,7 @@ console.log(now.getSeconds());
 console.log(now.getMilliseconds());
 console.log(now.getDay()); // 0(일) ~ 6(토)
 
-// 퀴즈
+// 퀴즈 (실습)
 // Date 객체를 이용해 오늘 요일을 얻고, (힌트. getDay())
 // if or switch 구문 이용해서 평일/주말인지 콘솔창에 출력하는 코드 작성
 
@@ -59,6 +69,7 @@ if (dayOfWeek === 0 || dayOfWeek === 6) {
 */
 
 // console.clear();
+console.log("-----------");
 
 // Math 객체
 // 수학적인 상수와 함수
@@ -83,7 +94,7 @@ console.log(Math.floor(Math.random() * 10)); // 0 <= x < 10
 // 0 ~ 10
 console.log(Math.floor(Math.random() * 11)); // 0 <= x < 11
 
-// 퀴즈
+// 퀴즈 (실습)
 // 1 ~ 100
 // 20 ~ 22
 

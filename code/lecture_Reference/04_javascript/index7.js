@@ -79,7 +79,8 @@ console.log(result);
 // -----------------------------------------
 // switch문
 // - 하나 이상의 case 문으로 구성.
-// - default가 필수는 아니지만, 사용하길 권장.
+// - default가 필수는 아니지만, 사용하길 권장. // if문의 else 같은 존재.
+// - switch문 내의 모든 case가 매칭 되지 않을 때 실행.
 // - 여러개의 case 문을 묶을 수도 있다.
 // break: 조건을 빠져나갈때 사용하는 키워드
 
@@ -145,19 +146,16 @@ num % 2 === 1 ? console.log('홀수') : console.log('짝수');
 
 // 실습 - new date
 // 내장 함수 - 현재 날짜와 시간을 나타내는 JavaScript Date 객체를 반환
-let now = new Date(); // Fri May 10 2024 09:52:01 GMT+0900 (한국 표준시)
-let now2 = new Date().getHours(); // Fri May 10 2024 09:52:01 GMT+0900 (한국 표준시)
+// Q) 내장 함수?
+// A) JS 엔진이 기본적으로 제공하는 함수.
+// A2) 개발자가 별도로 정의하지 않아도 사용할 수 있는 함수.
+// 참고) 개발자가 쉽게 데이터를 처리하도록 도와줌.
+// 전역 객체에 속해 있어 어디서든 접근 가능하고 바로 사용 가능!
 
-// 객체 점 접근법
-// 관련 메소드
-// getDate(): 월의 몇 번째 날인지 반환합니다.
-// getDay(): 주의 몇 번째 날인지 반환합니다 (0부터 시작).
-// getMonth(): 몇 번째 달인지 반환합니다 (0부터 시작).
-// getHours(): 시간을 반환합니다 (0부터 23까지).
-// getMinutes(): 분을 반환합니다 (0부터 59까지).
-// getSeconds(): 초를 반환합니다 (0부터 59까지).
-// getMilliseconds(): 밀리초를 반환합니다 (0부터 999까지).
-// getTime(): 1970년 1월 1일부터 현재까지의 밀리초 단위의 시간을 반환합니다.
+let now = new Date(); // Fri May 10 2024 09:52:01 GMT+0900 (한국 표준시)
+let now2 = new Date().getHours(); // 9
+
+
 console.log(now);
 console.log(now2);
 

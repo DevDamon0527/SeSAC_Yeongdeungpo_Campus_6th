@@ -31,16 +31,22 @@ console.log(str.toLowerCase()); // happy birthday
 // 양끝 공백 제거
 console.log(str2.trim());   // Happy Birthday
 console.log(str2.trim().length);    // 14
+console.log("------");
 
 // indexOf() 글자 위치 찾기
 // 위치(index): 0 부터 시작
+// 같은 문자열이 있으면 처음에 나오는 위치 
 console.log(str.indexOf('y'));
 console.log(str.indexOf('i'));
-console.log(str.indexOf('v'));  // 존재하지 않는 문자에 대해 검색하면 -1 반환.
+console.log(str.indexOf(' '));  
+console.log(str.indexOf('v'));// 존재하지 않는 문자에 대해 검색하면 -1 반환. 매개변수로 아무 값이 들어가지 않는다면 -1 반환
 
 // slice() 문자열 자르기
+// 음수값이 들어간다면 뒤에서부터 순서를 센다.
 console.log(str.slice(10)); // hday - 10번 위치의 글자 ~ 끝
 console.log(str.slice(1,5)); // appy - start (1) ~ end-1 (4) 까지 자르기.
+console.log(str.slice(-4)); // hday - 뒤에서 4번 위치의 글자 ~ 끝
+console.log("------");
 
 // replace() 문자열 바꾸기
 console.log(str.replace('p', 'w'));
@@ -55,6 +61,7 @@ console.log(str3.split('n')); //  ['di', '', 'er']
 // repeat()
 console.log(str3.repeat(4)); 
 
+console.log("--------------");
 ////////////////////////////////////////
 // 배열 내장 메서드
 let arr = [1, 2, 3, 4, 5];
@@ -82,6 +89,12 @@ console.log(arr2);
 arr2.shift();
 console.log(arr2);
 
+// length : 배열의 길이 변환
+console.log(arr.length);
+
+// indexOf(): 특정 요소의 인덱스를 찾는 데 사용
+console.log(arr.indexOf(2));
+
 // includes(요소): 요소가 있는지 없는지 검사. (true, flase)
 console.log(arr2.includes('quokka')); // true
 console.log(arr2.includes('apple')); // false
@@ -95,6 +108,7 @@ console.log(arr2);
 console.log(arr2.join(''));
 console.log(arr2.join('-'));
 
+console.log("--------------");
 
 // 메서드 체이닝(method chaining)
 // 여러 메서드를 연결해서 사용할 수 있다!
