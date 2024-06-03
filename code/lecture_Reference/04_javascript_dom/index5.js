@@ -101,7 +101,10 @@ todoForm.addEventListener('submit', (e) => {
 
   if (newTodo !== '') {
     const newTodoLi = document.createElement('li'); // <li></li>
+    console.log(newTodoLi);
+    console.log(newTodo); 
     newTodoLi.append(newTodo); // <li>input입력값</li>
+    console.log(newTodoLi);
     todos.append(newTodoLi);
   }
 
@@ -123,3 +126,4 @@ chgInput.addEventListener('input', function () {
   const div = document.querySelector('.intro');
   div.textContent = this.value; // 실시간 텍스트 동기화
 });
+
