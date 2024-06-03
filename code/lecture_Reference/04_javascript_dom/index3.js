@@ -1,9 +1,13 @@
 console.log(document);
+// console.log(document.childNodes[1].childNodes[1]);
 console.log(document.head);
 console.log(document.body);
 console.log(document.title);
 console.log(document.URL);
 // console.log(document.domain);
+// * 취소선이 그어지는 이유 (참고 - 설명)
+// - 해당 속성의 사용을 권장하지 않거나, 더 이상 지원되지 않을 가능성을 나타냄.
+// 최신 보안 정책에서는 도메인 사용한 접근 제어 방식이 보안상 취약할 수 있기 때문에 사용을 지양함.
 
 // document 객체를 이용해 HTML "요소 선택"
 // 1. getElementById
@@ -62,3 +66,8 @@ for (let pink of pinks) {
 }
 
 // 더 관련해서 자세히 궁금하면 링크 올려드리겠다 (MDN)
+// NodeList
+// https://developer.mozilla.org/ko/docs/Web/API/NodeList
+
+// HTMLCollection
+// https://developer.mozilla.org/ko/docs/Web/API/HTMLCollection

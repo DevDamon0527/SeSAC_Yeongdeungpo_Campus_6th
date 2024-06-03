@@ -75,10 +75,11 @@ for (let li of list) {
 // h1.classList.add('add-h1');
 // h1.classList.remove('add-h1');
 // console.log(h1.classList.contains('add-h1'));
+
 // if (h1.classList.contains('add-h1')) {
-//   h1.innerText = '하하하 add-h1 클래스가 있지요!';
+//   h1.innerText = 'add-h1 클래스가 있었는데?!';
 // } else {
-//   h1.innerText = '하하하 add-h1 클래스가 없지요ㅜㅜ';
+//   h1.innerText = 'add-h1 클래스가 아뇨 그냥 없어요.';
 // }
 h1.classList.toggle('add-h1');
 

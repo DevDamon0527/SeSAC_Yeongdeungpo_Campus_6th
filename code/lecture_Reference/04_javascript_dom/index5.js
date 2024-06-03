@@ -62,10 +62,10 @@ const input = document.querySelector('input');
 // 이벤트 발생 -> 브라우저는 발생한 이벤트에 대한 정보를 담은 "이벤트 객체(event object)"를 이벤트 리스터에 전달
 // ex. mousedown 이벤트 발생 -> 이벤트 객체는 (마우스 좌표, 버튼 번호) 정보를 가짐
 // ex. keydown 이벤트 발생 -> 이벤트 객체는 (키 코드값, 어떤 키가 눌렸는지에 대한 정보) 정보를 가짐
-// 키보드 이벤트 // 나의 키보드 타자검정 보여줄까나..?
 
 btn.addEventListener('click', function (event) {
     // event 객체
+    // 이벤트에 대한 다양한 정보를 포함
     console.log(event); // 이벤트 객체에 대한 정보 출력
   });
   
