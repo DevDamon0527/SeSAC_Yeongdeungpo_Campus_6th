@@ -19,6 +19,9 @@ const lists = ['apple', 'grape'];
 [f1, f2, f3 = 'orange'] = lists;
 console.log(f1, f2, f3);
 
+
+
+
 // 2. 객체 구조 분해 할당
 // - 변수를 선언하는 순서는 중요하지 않음
 // - 키 값과 변수명이 일치해야 함
@@ -43,7 +46,7 @@ console.log(n1, t1, c1); // undefined
 const { title: t2, num: n2, content: c2 } = obj;
 console.log(t2, c2, n2);
 
-///////////////
+// -------------------------------------------
 function getInfo(lecture) {
   // TODO: 구조 분해 할당을 사용하여 값 추출
   const { name, part, leader } = lecture;
@@ -64,7 +67,10 @@ const result = getInfo(lectureInfo);
 console.log(result); // SESAC x CODINGOn 강의는 WEB 개발을 공부합니다. 수업의 리더는 Sean 입니다.
 
 console.clear();
-//////////////////////
+
+
+
+//------------------------------------
 // spread 연산자
 // 반복 가능한 객체에 대해서 단일 요소로 압축을 해제하는 역할 (== 객체의 값을 펼친다!!!)
 // spread in array
@@ -99,6 +105,8 @@ console.log(chip);
 console.log(potatoChip);
 console.log(sweetPotatoChip);
 
+
+//-------------------------------------
 // rest 파라미터
 // 1. 함수에서 rest를 사용할 때
 const values = [10, 20, 30, 40, 50, 60];
@@ -130,7 +138,10 @@ console.log(two1); // 2
 console.log(rest2); // [ 3, 4, 5, 6, 7, 8 ]
 
 console.clear();
-/////////////////////////
+
+
+//-------------------------------------
+
 // 클래스
 // : 객체 생성 템플릿 => 객체를 만들기 위해 사용!
 
@@ -180,6 +191,9 @@ console.log(house2);
 house2.getAge();
 house2.getWindow();
 
+
+//-------------------------------------
+
 // 클래스 상속
 // 부모 클래스: House
 // 자식 클래스 Apartment
@@ -196,6 +210,8 @@ class Apartment extends House {
         총 층수는 ${this.floor} 이며, 창문의 개수는 ${this.window}이다.`;
   }
 
+
+  //-------------------------------------
   // 오버라이딩(overriding)
   // 부모 클래스에 정의되어 있는 메서드 이름을 동일하게 쓰되, 내용은 다를 때
   getWindow() {
@@ -211,12 +227,15 @@ console.log(apt1.getWindow());
 
 console.log('#################################');
 
-////////////////////////////////////////////////////////
-// 단축 평가
+
+
+
+//-------------------------------------
+// 단축 평가 (이것을 단축평가라 부르는지 확인필요 물론 이렇게 적혀있는 책이 있긴 하지만 )
 // &&, ||
 
-// A && B : 두 개의 피연산자 모두 t면 t 반환
-// A || B : 두 개의 피연산자 중에서 하나만 t여도 t반환
+// A && B : 두 개의 피연산자 모두 t면 t 반환,논리곱
+// A || B : 두 개의 피연산자 중에서 하나만 t여도 t반환, 논리합
 
 console.log(true && true); // true
 console.log(false && true); // false
@@ -224,24 +243,34 @@ console.log(false && true); // false
 console.log(true || false); // true
 console.log(false || true); // true
 
+
+// 단축평가란  && 연산자의 왼쪽이 false 일때 무조건 오른쪽의 값이 출력되는 것을 의미한다. 
+// 그래서 fasly 경우에 해당하는 것들은
+// undefined, null, 0 , false ,'', NaN
+
+// 단축평가는 사용하는 이유 
+// 예) a && b 일때 a가 사용자가 요청이라고 가정하자. 사용자의 요청이 있다면 b의 값을 검토할 필요도 없이 
+// a를 실행하도록 하는 경우와 같은 경우이다  이때 b는 true의 값으로 지정해야 한다.
+// 예) 사용자가 지정한 칼라가 있다면 무조건 사용자가 지정한 칼라를 사용하도록 하고 사용자가 지정하지 않았다면 디폴트 칼라를 사용하도록 하는 경우로 if문으로 이를 해결할 수 있지만 단축평가로 간단히 해결할 수도 있다. 
+
+
 const xx = 5;
 const yy = 7;
 
-// 삼항연산자 예시
-const result1 = xx > yy ? 'xx가 큼' : 'yy가 큼';
-console.log(result1); // yy가 큼
-
 // 단축평가 (&&, 논리곱)
-const result2 = xx > yy && 'xx가 큼';
+const result2 = xx > yy && 'xx가 큼';  // && 의 왼쪽이 true이기 때문에 결과는 무조건  false이다 
 console.log(result2); // false
-const result3 = xx < yy && 'yy가 큼';
+
+const result3 = xx < yy && 'yy가 큼'; //  &&왼쪽이 true이므로 결과는 && 무조건오른쪽값이다
 console.log(result3); // yy가 큼
 
 // 단축평가 (||, 논리합)
 const result4 = xx || 100;
 console.log(result4); // 5
 
-const nameEx = '홍길동';
-const nameEx2 = null;
-console.log(nameEx || '이름없음');
-console.log(nameEx2 || '이름없음');
+
+let userColor ='red';
+// let userColor =undefined; 이면 currentColor는 blue
+let defaultColor ="blue";
+let currentColor = userColor || defaultColor;
+console.log(currentColor) // red
