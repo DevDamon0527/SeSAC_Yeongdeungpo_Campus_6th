@@ -4,22 +4,22 @@
  * >node app.js
  * 브라우저 http://127.0.0.1:8000/
  */
-const express = require('express')
+const express = require('express');
 const app = express();
 const PORT = 8000;
 
-console.log(app)
+console.log(app);
 
-app.get('/', function(request, responsive){
-    responsive.send('Hello Express')
-})
-app.listen(PORT, function(){
-    console.log(` Listening a port ${PORT} http://localhost:${PORT}`)
-})
+app.get('/', function (request, response) {
+  response.send('Hello Express');
+});
+app.listen(PORT, function () {
+  console.log(` Listening a port ${PORT} http://localhost:${PORT}`);
+});
 
 /**
  * app를 출력해보면 ,use, param, route, get, post, patch, put, search 등 있는것을 눈으로 확인하고
- * 1. app.**get**(pat**h, c**allback): HTTP GET 요청에 대한 라우터를 등록
+ * 1. app.**get**(path, callback): HTTP GET 요청에 대한 라우터를 등록
  * 2. app.**post**(path, callback): HTTP POST 요청에 대한 라우터를 등록
  * 3. app.use([path,] callback [, callback...]): 미들웨어 함수를 등록
  * 4. app.set(name, value): Express 애플리케이션의 설정 값을 지정 일반적으로, view engine과 views 설정을 지정하는 데 사용
