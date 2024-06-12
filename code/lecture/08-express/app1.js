@@ -1,26 +1,24 @@
-/**
- * https://www.npmjs.com/package/express 에서 살펴보기
- * 실행방법
- * >node app.js
- * 브라우저 http://127.0.0.1:8000/
- */
 const express = require('express');
 const app = express();
 const PORT = 8000;
+// console.log(app)
+app.set('view engine','ejs');
+app.set('views','./views') // views폴더안에 파일.ejs
 
-console.log(app);
 
-app.get('/', function (request, response) {
-  response.send('Hello Express');
-});
-app.listen(PORT, function () {
-  console.log(` Listening a port ${PORT} http://localhost:${PORT}`);
-});
+
+app.get('/', (req, res)=>{
+    res.render('index')
+})
+
+
+app.listen(PORT, ()=>{
+    console.log('8000 서버실행')
+})
 
 /**
- * 
- * 1. app.get(path, callback): HTTP GET 요청에 대한 라우터를 등록
- * 2. app.post(path, callback): HTTP POST 요청에 대한 라우터를 등록
+ * 1. app.get(ptah,callback) HTTP GET 요청에 대한 라우터를 등록
+ * 2. app.post (path, callback)HTTP POST 요청에 대한 라우터를 등록
  * 3. app.use([path,] callback [, callback...]): 미들웨어 함수를 등록
  * 4. app.set(name, value): Express 애플리케이션의 설정 값을 지정 일반적으로, view engine과 views 설정을 지정하는 데 사용
  * 5. app.listen(port, [host], [backlog], [callback]): HTTP 서버를 시작 이 메서드는 포트 번호, 호스트 이름, 백로그 크기, 콜백 함수를 전달

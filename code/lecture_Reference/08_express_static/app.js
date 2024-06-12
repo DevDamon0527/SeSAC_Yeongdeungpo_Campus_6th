@@ -28,6 +28,10 @@ app.get('/create', (req, res) => {
   res.render('create', { title: 'Create' });
 });
 
+app.get('*', (req, res) => {
+  res.render('404');
+});
+
 app.use((req, res) => {
   res.status(404).render('404');
 });
