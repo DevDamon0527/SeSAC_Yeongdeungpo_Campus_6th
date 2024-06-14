@@ -4,11 +4,11 @@ const PORT = 8080;
 
 // view engine 설정
 app.set('view engine', 'ejs');
+app.set('views', './views');  // views 파일 설정
 
 // Middleware(미들웨어) 연결
 // : 요청(req)와 응답(res)의 중간에서 작업함
 // app.use()로 설정
-app.set('views', './views');  // views 파일 설정
 // (기존) body-parser 모듈 설치할 때
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
