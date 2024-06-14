@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Create Blog<%= title %> </title>
+</head>
+
+<body>
+      <h1>블로그 작성</h1>
+      <nav>
+            <div class="site-title">
+                  <a href="/"> <h1> Blog Title</h1></a>
+                  <p>A My first Blog</p>
+            </div>
+      <ul>
+            <li><a href="/">Home </a></li>
+            <li><a href="/about">About </a></li>
+            <li><a href="/create"> New Blog</a></li>
+     </ul>
+</nav>
+
+
+<div class="create-blog content">
+      <form action="">
+            <label for="title"> Blog Title : </label>
+            <input type="text" id="title" required > <br>
+
+            <label for="snippet">Blog snippet: </label>
+            <input type="text" id="snippet"><br>
+
+            <label for="body"> Blog body: </label>
+            <textarea name="" id="body" cols="30" rows="10" required>
+
+            </textarea>
+            <button>Submit</button>
+
+      </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+📕 파일생성1 | fs.writeFile();
+ 
+var fs = require('fs');
+//create a file named mynewfile3.txt:
+fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+--------------------
+📕 파일생성2 | fs.open()
+
+var fs = require('fs');
+//create an empty file named mynewfile2.txt:
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+------------------
+📕 파일생성3 | fs.appendFile() // 특정내용을 기존파일에 추가한다
+
+var fs = require('fs');
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+또는 
+const fs = require('fs');
+fs.appendFile('mynewfile2.txt', 'Good!', ()=>{
+    console.log('Add some text')
+})
+
+----------------
+📕 파일삭제 
+var fs = require('fs');
+//Delete the file mynewfile2.txt:
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+또는
+const fs = require('fs');
+fs.unlink('mynewfile2.txt', function(){
+    console.log('파일삭제')
+})
+
+
+----------------
+📕 파일이름변경
+var fs = require('fs');
+//Rename the file "mynewfile1.txt" into "myrenamedfile.txt":
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File Renamed!');
+});
+
+또는
+const fs = require('fs');
+fs.rename('mynewfile1.txt', 'newfile1.txt', function(){
+    console.log('파일이름변경완로')
+})
+
+---------------
+📕 파일읽기 | 
+형식 : fs.readFileSync(경로, 옵션) 파일을 읽고, 해당 콘텐츠를 반환하는 인터페이스이다.
+형식 : fs.readFile( filename, encoding, callback_function )
+readFile()는 non-blocking asynchronous(비동기적) way,
+readFileSync()는 synchronously read files
+
+
+
+[아무파일이름.js]
+const fs = require('fs');
+const data = fs.readFile('./input.txt', 'utf-8', function(err,data){
+    console.log(data)
+})
+console.log('파일읽기 완료')
+// 출력결과는 파일읽기 완료 , input.txt 파일내용
+// 2번째 인자 'utf-8'를 빼면 <Buffer 31 31 ... 출력된다 
+
+
+[아무파일이름.js]
+const fs = require('fs');
+const data = fs.readFileSync('./input.txt', 'utf-8')
+console.log(data)
+

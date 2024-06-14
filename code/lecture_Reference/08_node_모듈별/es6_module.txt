@@ -1,0 +1,31 @@
+//Node.js 에서 13.2버전부터는 es모듈을 정식지원하기 시작했으면 확장자로 mjs, import, export 와 같은 es 모듈를 사용한다. 
+
+[math.mjs]
+const add = (a,b)=>{
+    return a+b;
+}
+
+const subtract =(a,b) =>{
+    return a-b
+}
+export default  {
+    add, 
+    subtract,
+}
+
+[main.mjs]
+import math from './add.mjs';
+console.log(math.add(5,5))
+console.log(math.subtract(6,5))
+
+또는  아래처럼 사용할 수 있다.
+import math from './add.mjs';
+const { add, subtract} = math;
+console.log(add(5,5))
+console.log(subtract(6,5))
+
+export시에도 
+const add =(a,b)=> { 대신
+export const add =(a,b) { 사용가능하며 이때 export default {} 없앤다
+불러올때도,
+import { add, subtract}  from './add.mjs'; 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습31 결과 페이지</title>
+  </head>
+  <body>
+    <!-- 
+      실습31 주의할 점 
+      이미지 사용할 때 경로를 2개 이상 타는 경우, 이미지 경로(src) 속성에 / 를 붙여주어 절대경로를 탈 수 있도록 하자!!
+    -->
+    <img src="/<%= src %>" width="200" height="200" />
+    <ul>
+      <li><%= userInfo.title %></li>
+    </ul>
+  </body>
+</html>
