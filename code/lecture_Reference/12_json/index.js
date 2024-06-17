@@ -25,3 +25,11 @@ console.log(json, typeof json);
 // json 변수는 JSON 형태의 문자열이므로 . [] 연산자를 이용해 키 값 접근 불가능
 console.log(json.model);
 console.log(json.wow);
+
+console.log(json[1]);
+console.log(json.split(""));
+
+// json 변수는 string 타입이므로 
+// string 타입에 쓸 수 있는 내장 메소드들은 쓸 수 있음!
+console.log(json.split(""));
+console.log(json.toUpperCase());
