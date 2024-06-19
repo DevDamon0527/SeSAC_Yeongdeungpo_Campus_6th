@@ -1,3 +1,6 @@
+// 이슈
+// 아래 코드를 실행했을 때 product와 price 변수에 undefined가 출력됨. 원인은?
+
 let product, price;
 
 function goMart() {
