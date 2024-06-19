@@ -32,7 +32,7 @@ const uploadDetail = multer({
 });
 
 app.set('view engine', 'ejs');
-app.set('views', './views'); 
+app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 // single 미들웨어를 라우터 미들웨어 앞에 넣으면 -> multer 설정에 따라 파일 업로드 후 req.file 객체 생성
 // single()의 인수는 input 태그의 name과 일치시키기 (or 폼 데이터의 키)
 // app.post('/upload', uploadDetail.single('userfile'), function (req, res) {
-  app.post('/upload', upload.single('userfile'), function (req, res) {
+app.post('/upload', upload.single('userfile'), function (req, res) {
   // req.file: 파일 업로드 성공 결과 (파일 정보)
   // {
   //   fieldname: 'userfile', // 폼에 정의된 필드명
@@ -62,7 +62,11 @@ app.get('/', function (req, res) {
   // [Object: null prototype] { title: '라이언이다!' }
   console.log(req.body);
 
+  // case1.
   res.send('Upload!!');
+
+  // case2.
+  // res.render('uploaded', { title: req.body.title, src: req.file.path });
 
   // 파일 탐색기 > uploads 폴더 생성됨!
   // Q. 확장자 없이 파일이 업로드됨. 왜지?
@@ -87,7 +91,7 @@ app.post(
     console.log(req.files); // req.files: { userfile1: [{}], userfile2: [{}] } 형태로 각 파일 정보 가짐
     console.log(req.body); // req.body: title 데이터 정보 확인 가능
     res.send('Upload Multiple Each!!');
-  },
+  }
 );
 
 // 4. 동적 파일 업로드
@@ -102,7 +106,7 @@ app.post(
     // console.log(req.file); // 파일 확인
     // console.log(req.body);
     // res.send({ file: req.file, fileInfo: req.body }); // 클라이언트에게 응답
-  },
+  }
 );
 
 // 주의!! 서버 요청 경로를 2개 이상 탈 경우
@@ -117,3 +121,7 @@ app.post('/upload/hello', uploadDetail.single('prac31'), function (req, res) {
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
 });
+
+// 참고
+// https://inpa.tistory.com/entry/EXPRESS-%F0%9F%93%9A-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4-%F0%9F%92%AF-%EC%9D%B4%ED%95%B4-%EC%A0%95%EB%A6%AC
+// https://gngsn.tistory.com/37
