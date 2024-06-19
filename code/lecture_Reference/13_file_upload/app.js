@@ -44,8 +44,8 @@ app.get('/', function (req, res) {
 // 1. single(): 하나의 파일 업로드할 때
 // single 미들웨어를 라우터 미들웨어 앞에 넣으면 -> multer 설정에 따라 파일 업로드 후 req.file 객체 생성
 // single()의 인수는 input 태그의 name과 일치시키기 (or 폼 데이터의 키)
-// app.post('/upload', uploadDetail.single('userfile'), function (req, res) {
-app.post('/upload', upload.single('userfile'), function (req, res) {
+app.post('/upload', uploadDetail.single('userfile'), function (req, res) {
+// app.post('/upload', upload.single('userfile'), function (req, res) {
   // req.file: 파일 업로드 성공 결과 (파일 정보)
   // {
   //   fieldname: 'userfile', // 폼에 정의된 필드명
