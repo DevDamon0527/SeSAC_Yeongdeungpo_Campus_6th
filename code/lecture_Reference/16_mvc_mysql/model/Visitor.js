@@ -5,7 +5,7 @@ const conn = mysql.createConnection({
   host: 'localhost',
   user: 'user',
   password: '1234',
-  database: 'sesac',
+  database: 'sesac_ydp_6',
 });
 
 // (2) GET /visitors => localhost:PORT/visitors
@@ -63,7 +63,7 @@ exports.postVisitor = (data, cb) => {
 
       console.log('Visitor.js: ', rows);
       cb(rows.insertId);
-    },
+    }
   );
 };
 
@@ -79,7 +79,7 @@ exports.patchVisitor = (data, cb) => {
 
       console.log('Visitor.js: ', rows);
       cb(rows); // true, rows(=true)
-    },
+    }
   );
 };
 
