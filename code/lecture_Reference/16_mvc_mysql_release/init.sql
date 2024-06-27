@@ -10,9 +10,9 @@ SHOW tables;
 -- 이미 user 테이블이 있다면 기존 테이블 지움
 DROP TABLE IF EXISTS user;
 
--- TODO: user 데이터베이스 생성
+-- TODO: user 테이블 생성
 
--- user 데이블 데이터 추가
+-- user 테이블 데이터 추가
 INSERT INTO user (userid, name, pw) VALUES ('sean', 'sean', '1234');
 INSERT INTO user (userid, name, pw) VALUES ('test', 'test', '1234');
 INSERT INTO user (userid, name, pw) VALUES ('apple', 'apple', '1234');
