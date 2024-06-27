@@ -1,7 +1,11 @@
-const User = require("../model/User");
+const User = require('../model/User');
+
+exports.main = (req, res) => {
+  res.render('index');
+};
 
 exports.signup = (req, res) => {
-  res.render("signup");
+  res.render('signup');
 };
 
 exports.postSignup = (req, res) => {
@@ -11,7 +15,7 @@ exports.postSignup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
-  res.render("signin");
+  res.render('signin');
 };
 
 exports.postSignin = (req, res) => {
@@ -26,7 +30,7 @@ exports.postSignin = (req, res) => {
 
 exports.postProfile = (req, res) => {
   User.postProfile(req.body.userid, (result) => {
-    res.render("profile", { data: result[0] });
+    res.render('profile', { data: result[0] });
   });
 };
 

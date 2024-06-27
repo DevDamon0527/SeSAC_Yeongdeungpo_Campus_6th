@@ -5,7 +5,7 @@ SHOW tables;
 -- 기존 테이블 지움 (필요없음)
 DROP TABLE user;
 
--- 새로운 데이터베이스 생성
+-- 새로운 테이블 생성
 CREATE TABLE user (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	userid VARCHAR(20) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE user (
     pw VARCHAR(20) NOT NULL
 );
 
--- user 데이블 데이터 추가
+-- user 테이블 데이터 추가
 INSERT INTO user (userid, name, pw) 
     VALUES ('sean', 'sean', '1234'), ('test', 'test', '1234'), ('apple', 'apple', '1234'), ('hello', 'hello', '1234');
 

@@ -4,7 +4,7 @@ const conn = mysql.createConnection({
   host: 'localhost',
   user: 'user',
   password: '1234',
-  database: 'sesac_ydp_6',
+  database: 'sesac',
 });
 
 exports.postSignup = (data, cb) => {
