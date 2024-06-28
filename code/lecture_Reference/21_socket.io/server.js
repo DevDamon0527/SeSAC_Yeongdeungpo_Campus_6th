@@ -1,6 +1,5 @@
 const express = require('express');
-const http = require('http');   
-const { send } = require('process');
+const http = require('http');
 // Node.js 기본 내장 모듈인 'http' 불러오기. 
 // 'http' 모듈은 HTTP 서버와 클라이언트 기능 제공
 
