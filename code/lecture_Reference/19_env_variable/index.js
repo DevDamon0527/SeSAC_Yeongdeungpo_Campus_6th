@@ -19,10 +19,12 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
 
-app.get('/', (req, res)=> {
-  res.send('Hello, world!')
-})
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`)
-})
+  console.log(`http://localhost:${PORT}`);
+});
+
+// https://www.daleseo.com/js-dotenv
