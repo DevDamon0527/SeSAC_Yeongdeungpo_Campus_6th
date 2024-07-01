@@ -13,7 +13,7 @@ app.set('views', './views');
 
 // 메인 페이지
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('cookie');
 });
 
 // cookieParser(secretKey, optionObj);
@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 //    - 서명된 쿠키는 req.cookies - req.singedCookies 객체에 들어있음
 // - optionObj: 쿠키에서 사용되는 option을 의미하며 선택사항
 
+/*
 // ver1. 평문 쿠키를 사용하려는 경우
 app.use(cookieParser());
 
@@ -62,8 +63,9 @@ app.get('/clearCookie', (req, res) => {
   // : 데이터와 함께 응답을 보냄
   res.send('clear cookie');
 });
+*/
 
-/*
+
 // ver2. 암호화된 쿠키를 사용하기 위해 임의의 문자열을 비밀키로 사용
 app.use(cookieParser('myPrivateKey')); // process.env.COOKIE_SECRET
 
@@ -71,7 +73,7 @@ app.use(cookieParser('myPrivateKey')); // process.env.COOKIE_SECRET
 // 옵션의 singed 키 값을 true 설정시; 쿠키 암호화 사용함
 const cookieConfig = {
   httpOnly: true,
-  maxAge: 60 * 1000, // 1min
+  maxAge: 5 * 1000, // 1min
   signed: true,
 };
 
@@ -104,7 +106,7 @@ app.get('/clearCookie', (req, res) => {
   // : 데이터와 함께 응답을 보냄
   res.send('clear signed cookie');
 });
-*/
+
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);

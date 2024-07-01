@@ -30,13 +30,13 @@ app.use(
     resave: false, // 세션이 변경되지 않아도 계속 저장. 덮어쓰기 가능하게 하기
     saveUninitialized: false, // 세션을 초기값이 지정되지 않은 상태에서도 처음부터 세션 생성할지 설정
     // -> 일반적으로 false로 두는 것이 좋음
-    // cookie: {
-    //   // 세션 쿠키 설정 (세션 관리할 때 클라이언트로 보내는 쿠키)
-    //   httpOnly: true, // js로 세션 쿠키 사용 불가능하도록
-    //   secure: false, // http에서도 사용 가능
-    //   maxAge: 5 * 1000, // 5s
-    //   // expires: 60 * 60 * 24,
-    // },
+    cookie: {
+      // 세션 쿠키 설정 (세션 관리할 때 클라이언트로 보내는 쿠키)
+      httpOnly: true, // js로 세션 쿠키 사용 불가능하도록
+      secure: false, // http에서도 사용 가능
+      maxAge: 5 * 1000, // 5s
+      // expires: 60 * 60 * 24,
+    },
     // name: 'my-session-cookie', // 세션 쿠키명 디폴트값은 connect.sid이지만 다른 이름을 줄수도 있다.
 
     // secret : 쿠키를 임의로 변조하는 것을 방지하기 위한 값
@@ -67,8 +67,15 @@ app.get('/', (req, res) => {
 app.get('/set', (req, res) => {
   // 세션 설정
   // req.session.키 = 값;
-  req.session.name = '홍길동';
-  req.session.age = 20; // new
+
+  if (req.query.name) {
+      req.session.name = req.query.name;
+      req.session.age = req.query.age;
+  } else {
+      req.session.name = '바나나';
+      req.session.age = 10;
+  }
+
   res.send('세션 설정 완료!');
 });
 
@@ -84,7 +91,7 @@ app.get('/name', (req, res) => {
   // res.send({ id: req.sessionID, name: req.session.name });
   res.send({ id: req.sessionID, name: req.session.name, age: req.session.age }); // new
 });
-
+ 
 app.get('/destroy', (req, res) => {
   // 세션 삭제
   // req.session.destroy(세션_삭제시_호출할_콜백)
@@ -100,8 +107,8 @@ app.get('/destroy', (req, res) => {
       throw err;
     }
     // console.log(req.session);
-    res.send('세션 삭제 완료');
-    // res.redirect('/'); // / 경로 리다이렉트
+    // res.send('세션 삭제 완료');
+    res.redirect('/name'); // / 경로 리다이렉트
   });
 });
 

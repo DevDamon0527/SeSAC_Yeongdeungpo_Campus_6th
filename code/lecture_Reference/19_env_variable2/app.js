@@ -1,18 +1,25 @@
 // app.js
 
 const path = require('path');
+const dotenv = require('dotenv');
 
 // dotenv를 사용하여 .env 파일의 환경 변수를 로드합니다.
 // 이는 보통 애플리케이션의 가장 앞부분에 위치합니다.
-require('dotenv').config({
-  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
-}); // NODE_ENV에 따라 적절한 .env 파일을 로드합니다.
+// 먼저 기본 .env 파일을 로드합니다.
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+// 그 다음 NODE_ENV에 따른 환경별 .env 파일을 로드합니다.
+dotenv.config({
+    path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
+    override: true // 이 옵션을 통해 이전에 설정된 환경 변수를 덮어씁니다.
+});
+
 
 const express = require('express');
 const app = express();
 
 // process.env 객체를 통해 환경 변수에 접근합니다.
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 const dbName = process.env.DATABASE_NAME;
 const apiKey = process.env.API_KEY;
 
