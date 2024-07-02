@@ -94,3 +94,9 @@ M:N (다대다) 관계에서만 해당됩니다.
 Sequelize 문서 (https://sequelize.org/master/manual/associations.html#foreign-keys_1 ) 에서도 이러한 용어들과 함께 자세한 내용 및 예제를 확인하실 수 있으니 찾아보시면 도움이 될 것입니다
 
 */
+
+// 각 메서드의 인자 값에 대한 설명:
+// foreignKey: 관계를 정의하는 데 사용될 외래 키의 이름을 지정합니다.
+// sourceKey: 소스 모델에서 참조할 키를 지정합니다 (기본값은 주키).
+// targetKey: 대상 모델에서 참조할 키를 지정합니다 (기본값은 주키).
+// onDelete, onUpdate: 관련 레코드가 삭제되거나 업데이트될 때의 동작을 정의합니다 (예: 'CASCADE'는 연관된 레코드도 함께 삭제/업데이트).
