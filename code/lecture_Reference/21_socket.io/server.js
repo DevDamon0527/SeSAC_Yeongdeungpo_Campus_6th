@@ -10,6 +10,8 @@ const socketIO = require('socket.io');
 const app = express();
 // Express 애플리케이션 생성.
 // app 객체는 Express 애플리케이션의 인스턴스.
+// (참고) - *인스턴스?
+// - 그 클래스에 따라 생성된 실제 객체.
 
 const server = http.createServer(app);
 // Express 애플리케이션 기반으로 HTTP 서버 생성.
@@ -27,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 // [실습 3-2-1]
-// 사용자 닉네임 모음 객체
+// 사용자 닉네임 모음 객체 (hint.js)
 const nickObjs = {}; // { socket.id: nick1, socket.id: nick2, ... }
 
 // [실습 3-2-3] 
