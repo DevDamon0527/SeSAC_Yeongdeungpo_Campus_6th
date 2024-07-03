@@ -3,7 +3,7 @@
 
 // --------------------------------------------------------
 // crypto 모듈로 단방향 암호화 구현하기
-// 참고) 사용자의 비밀번호는 본인만이 알 수 있어야하고, 만약 비밀번호를 잃어버린 경우 복호화하는 과정에서 노출되기 때문에 대부분 재설정을 할 수 있도록 한다. 따라서 단방향 암호화 방식을 사용한다
+// 참고) 사용자의 비밀번호는 본인만이 알 수 있어야하고, 만약 비밀번호를 잃어버린 경우 복호화하는 과정에서 노출되기 때문에 대부분 재설정을 할 수 있도록 한다. 따라서 단방향 암호화 방식을 사용한다
 const crypto = require('crypto');
 
 // --------------------------------------------------------
@@ -32,14 +32,16 @@ console.log(createHashedPassword('2345'));
 // saltAndHashPassword 함수에서는 먼저 임의의 솔트 값을 생성한 후, pbkdf2Sync 함수를 사용하여 해당 솔트와 제공된 비밀번호를 기반으로 해시를 생성합니다. 그 다음, 생성된 솔트와 해시를 반환합니다.
 function saltAndHashPassword(password) {
   const salt = crypto.randomBytes(16).toString('base64'); // Salt 생성
-  const iterations = 100; //반복 횟수
-  const keylen = 64; //생성할 키의 길이
-  const digest = 'sha512'; //해시 알고리즘
+  const iterations = 100000; // 반복 횟수 (보안을 위해 100000으로 증가)
+  const keylen = 64; // 생성할 키의 길이
+  const digest = 'sha512'; // 해시 알고리즘
 
   const hash = crypto
-    .pbkdf2Sync(password, salt, iterations, keylen, digest) // pbkdf2함수(비밀번호, 솔트, 반복횟수, 키의길이, 알고리즘)으로 생성이되고
+    .pbkdf2Sync(password, salt, iterations, keylen, digest)
+    // pbkdf2함수(비밀번호, 솔트, 반복횟수, 키의길이, 알고리즘)으로 생성이되고
     // 여기까지 반환되는 값은 Buffer값 (즉, hash는 buffer 값)
     .toString('base64'); // Salt와 비밀번호를 결합하여 해시(Encrypted password) 생성
+  // => 암호회된 결과를 Buffer 형태로 반환하고 이를 base64 문자열로 변환하여 저장하거나 전송하기 쉽게 만듦
 
   return {
     salt,
@@ -51,9 +53,9 @@ function saltAndHashPassword(password) {
 // 암호 비교 함수
 // checkPassword 함수에서는 제공된 비밀번호, 솔트, 그리고 해시를 기반으로 새로운 해시를 생성하고, 이를 저장된 해시와 비교합니다. 제공된 비밀번호가 원래의 비밀번호와 일치하면 두 해시 값도 일치하게 됩니다.
 function checkPassword(inputPassword, savedSalt, savedHash) {
-  const iterations = 100; //반복 횟수
-  const keylen = 64; //생성할 키의 길이
-  const digest = 'sha512'; //해시 알고리즘
+  const iterations = 100000; // 반복 횟수 (saltAndHashPassword와 동일하게 설정)
+  const keylen = 64; // 생성할 키의 길이
+  const digest = 'sha512'; // 해시 알고리즘
 
   const hash = crypto
     .pbkdf2Sync(inputPassword, savedSalt, iterations, keylen, digest)
