@@ -29,8 +29,8 @@ console.log("nickObjs2 >> ", nickObjs2);
 // Object.values() : object에서 value만 뽑아서 배열로 만들어줌.
 // JS 내장함수
 console.log(Object.values(nickObjs2));
-console.log(Object.values(nickObjs2).indexOf(nick1));
-console.log(Object.values(nickObjs2).indexOf(nick2));
+console.log(Object.values(nickObjs2).indexOf(nick1)); // 0 
+console.log(Object.values(nickObjs2).indexOf(nick2)); // 1
 console.log(Object.values(nickObjs2).indexOf(nick3));
 // nick3은 nickObjs2에 존재하지 않기 때문에 -1
 
