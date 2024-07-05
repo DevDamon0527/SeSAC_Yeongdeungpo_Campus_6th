@@ -119,6 +119,7 @@ io.on('connection', (socket) => {
             io.emit('roomList', roomList);
         }
     })
+    // [6] 메시지 전송
     socket.on('sendMessage', (res) => {
         console.log("sendMessage >>>>>> ", res); // { message: '안녕', user: 'A', select: 'all' }
         const { message, user, select} = res; // 구조 분해 할당 -> res 객체에서 속성 추출하여 각각의 변수에 할당.
