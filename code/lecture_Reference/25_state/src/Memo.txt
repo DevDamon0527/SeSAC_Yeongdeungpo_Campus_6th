@@ -1,0 +1,39 @@
+** 컴포넌트 별 단축키
+// React 컴포넌트를 빠르게 생성하기 위한 스니펫!
+
+* ES7 + React / Redux / React-Native snippets 확장 프로그램 설치.
+
+1) 클래스 컴포넌트
+- rcc
+
+2) 함수형 컴포넌트
+- rfc (컴포넌트 작성과 동시에 export)
+- rfce (export 분리)
+- rsf (Props를 가진 컴포넌트)
+
+- rafc (빈 div를 가진 화살표 함수 컴포넌트)
+- rafce (export 분리)
+
+
+*** eslint-disable *
+
+- Lint 끄는 기능!
+
+
+**** React에서 Emmet 사용 방법
+- F1 눌른 후 "json" 검색
+- Open (user) Setting(Json) 파일 열기.
+
+  "emmet.includeLanguages": { "javascript": "javascriptreact" }
+
+복 붙!
+
+
+
+***** 
+Array 배열 상태의 state 변경 시
+let [a, b] = useState( ['A', 'B', 'C"]);
+
+let copy = [...a];
+copy[0] = "D";
+b(copy);
