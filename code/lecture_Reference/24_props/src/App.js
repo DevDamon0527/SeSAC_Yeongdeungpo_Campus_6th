@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <FunctionComponent />
-      <FunctionComponent name="KDT 3기"/>
+      <FunctionComponent name="KDT 3기" age={3}/>
       <hr />
 
       <ClassComponent />

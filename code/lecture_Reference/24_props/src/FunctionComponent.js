@@ -4,7 +4,7 @@
 // + 화살표 함수(함수표현식)로 작성해놨지만 함수선언문으로 작성해도 무방함
 import PropTypes from 'prop-types';
 
-const FunctionComponent = (props) => {
+const FunctionComponent = ({name='야호'}, props) => {
     // console.log(props); // { name : 'XXX' }
     // const { name } = props;
     const teacher = 'Damon';
@@ -15,7 +15,8 @@ const FunctionComponent = (props) => {
             <p>여기는 Funtional Component</p>
             {/* props 사용할 때 */}
             <p>
-                새로운 컴포넌트의 이름은 <b>{props.name}</b>
+                새로운 컴포넌트의 이름은 <b>{name}</b><br/>
+                나이는 <b>{props.age}</b>
             </p>
              {/* <p>새로운 컴포넌트의 이름은 <b>{name}</b></p> */}
         </div>
