@@ -37,3 +37,8 @@ let [a, b] = useState( ['A', 'B', 'C"]);
 let copy = [...a];
 copy[0] = "D";
 b(copy);
+
+useState 할 떄,
+// false / true
+// 0 / 1
+// "닫힘" / "열림"

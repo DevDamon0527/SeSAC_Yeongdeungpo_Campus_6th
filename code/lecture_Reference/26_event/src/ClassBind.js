@@ -13,27 +13,29 @@ export class ClassBind extends Component {
         // #1 클래스 컴포넌트에서 이벤트 사용 - bind 쓰기
         /*
             ‘bind’ 메서드로 ‘this’ 바인딩
-            **Q) 바인딩(Binding)이란?
+            **Q) 바인딩(Binding)이란? 
             - 프로그램의 어떤 기본 단위가 가질 수 있는 구성요소의 구체적인 값, 성격을 확정하는 것.
 
             - js에서 'this'는 함수가 호출되는 방식에 따라 달라질 수 있다.
             - 즉, 'this'가 무엇을 가리키는지 명확하게 해주기 위해 바인딩이 필요!
             - => 'this'가 올바른 객체를 가리키도록 설정하는 작업.
         */
-        // * 생성자에서 바인딩하기.
+        // *#1. 생성자에서 바인딩하기.
         this.printConsole = this.printConsole.bind(this);
         // (참고) bind 메서드는 'this'가 'printConsole'메서드 내에서 컴포넌트 인스턴스를 가리키도록 바인딩함.
     }
 
-    // 1) bind 사용하는 경우
+    // bind 사용하는 경우
     printConsole() {
         console.log("printConsole - this:", this); // 컴포넌트 인스턴스를 가리킴
         console.log("printConsole - state:", this.state); // 컴포넌트의 상태 출력
+        console.log("--------------------------------");
     }
 
     /**
      * #2. 클래스 컴포넌트에서 이벤트 사용 - 화살표 함수 사용
-     * 화살표 함수는 'this'가 상위 스코프의 'this'를 참조하므로 바인딩이 필요 없음.
+     * 화살표 함수는 'this'가 상위 스코프의 'this'를 참조하므로 바인딩이 필요 없음.(= Lexical Scoping") 
+     * ( 자신만의 this를 가지지 않습니다. )
      * evt : 이벤트 객체 / msg, e : 추가로 전달된 인자
      */
 
@@ -43,7 +45,8 @@ export class ClassBind extends Component {
         console.log("evt.currentTarget >>>", evt.currentTarget);
         console.log("msg >>>", msg);
         console.log("e >>>", e);
-        console.log("this: ", this);
+        console.log("this: ", this); // 클래스 인스턴스 참조.
+        console.log("--------------------------------");
     };
 
     render() {
@@ -62,11 +65,6 @@ export class ClassBind extends Component {
                 <button onClick={this.printConsole2}>
                     printConsole2(인자 X)
                 </button>
-                {/* 미리 바인딩된 인자 전달 */}
-                <button onClick={this.printConsole2.bind(this, "msg3", "msg4")}>
-                    printConsole2(인자 O, bind)
-                </button>
-                {/* bind를 사용할 때, 이벤트 객체는 미리 바인딩된 인자들 뒤에 추가로 전달 */}
             </div>
         );
     }
