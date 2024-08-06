@@ -1,5 +1,6 @@
 function Result({ data }) {
-    const { fruit, background, color, content } = data;
+  const { fruit, background, color, content } = data;
+  
     return (
       <>
         <img src={`${fruit}.png`} width={100} height={100} alt={fruit} />

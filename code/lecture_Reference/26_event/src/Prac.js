@@ -5,62 +5,6 @@ import Select from './Select';
 import Input from './Input';
 import Result from './Result';
 
-// function Practice4() {
-//   const [fruit, setFruit] = useState('peach.jpeg');
-//   const [bgc, setBgc] = useState('red');
-//   const [color, setColor] = useState('black');
-//   const [text, setText] = useState('');
-
-//   function Typing(e) {
-//     setText(e.target.value);
-//   }
-
-//   const fruitChange = (e) => {
-//     setFruit(e.target.value);
-//   };
-
-//   const bgcChange = (e) => {
-//     setBgc(e.target.value);
-//   };
-
-//   const colorChange = (e) => {
-//     setColor(e.target.value);
-//   };
-//   return (
-//     <div>
-//       과일:
-//       <select onChange={fruitChange}>
-//         <option value="peach.jpeg">복숭아</option>
-//         <option value="apple.jpeg">사과</option>
-//         <option value="banana.jpeg">바나나</option>
-//       </select>
-//       배경색:
-//       <select onChange={bgcChange}>
-//         <option value="red">빨강</option>
-//         <option value="yellow">노랑</option>
-//         <option value="blue">파랑</option>
-//       </select>
-//       글자색:
-//       <select onChange={colorChange}>
-//         <option value="black">검정</option>
-//         <option value="red">빨강</option>
-//         <option value="yellow">노랑</option>
-//       </select>
-//       <div>
-//         내용: <input type="text" onChange={Typing} />
-//       </div>
-//       <div>
-//         <img src={fruit} alt="" />
-//       </div>
-//       <div className="result" style={{ backgroundColor: bgc, color: color }}>
-//         {text}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Practice4;
-
 // ffc 단축키
 function Prac() {
   // 상태 관리
@@ -71,18 +15,10 @@ function Prac() {
     color: 'white',
     content: 'text',
   });
-  // 따로따로 관리 하는 법.
-  // const [fruit, setFruit] = useState('apple');
-  // const [background, setBackground] = useState('black');
-  // const [color, setColor] = useState('black');
-  // const [content, setContent] = useState('text');
 
   return (
-    // 의미없는 div 대신 빈 태그 넣기 가능
     <>
-      {
-        // props를 넘겨줄건데, setData 함수를 넘겨줘야 state 변경이 가능.
-      }
+      {/* props를 넘겨줄건데, setData 함수를 넘겨줘야 state 변경이 가능. */}
       <div>
         <Select setData={setData} />
       </div>
@@ -97,3 +33,10 @@ function Prac() {
 }
 
 export default Prac;
+
+// React에서 부모 컴포넌트의 props는 기본적으로 자식 컴포넌트에서 직접 변경할 수 없습니다.
+// 하지만, 부모 컴포넌트가 props로 전달한 함수를 자식 컴포넌트에서 호출하여 부모 컴포넌트의 상태를
+// 업데이트하는 방식으로 props의 내용을 간접적으로 변경할 수 있습니다.
+
+// 결론적으로, 자식 컴포넌트에서 setData를 사용하여 부모 컴포넌트의 상태를 변경하면, 
+// 부모 컴포넌트의 상태가 업데이트되며, 이 상태가 props로 다시 전달되기 때문에 props의 값이 바뀐 것처럼 동작합니다.

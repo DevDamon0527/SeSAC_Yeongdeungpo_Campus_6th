@@ -1,7 +1,9 @@
 function Input(props) {
-    const { setData } = props;
+  const { setData } = props;
+  
     const handleInput = (e) => {
       const content = e.target.value;
+      
       setData((data) => {
         return { ...data, content };
       });
