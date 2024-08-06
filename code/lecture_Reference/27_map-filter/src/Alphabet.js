@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function Alphabet() {
     // 배열 Ex
     // const [alphabet, setAlphabet] = useState(["b", "a", "n", "a", "n", "a"]);
 
-    // 객체 Ex
+    // 배열 안에는 객체 형태 Ex
     const [alphabet, setAlphabet] = useState([
         {
             id: 1,
-            alpha: "a",
+            alpha: 'a',
         },
         {
             id: 2,
-            alpha: "p",
+            alpha: 'p',
         },
         {
             id: 3,
-            alpha: "p",
+            alpha: 'p',
         },
         {
             id: 4,
-            alpha: "l",
+            alpha: 'l',
         },
         {
             id: 5,
-            alpha: "e",
+            alpha: 'e',
         },
     ]);
 
-    const [inputAlpha, setInputAlpha] = useState("");
+    const [inputAlpha, setInputAlpha] = useState('');
 
     // 글자 추가.
     const addAlpha = () => {
@@ -37,15 +37,18 @@ export default function Alphabet() {
             return;
         }
 
+        // *concat (맨 밑 예제 참고)
+        // - 기존 배열을 변경하지 않고, 주어진 배열이나 값들을 새로운 배열로 결합하여 반환.
         const newAlpha = alphabet.concat({
             id: alphabet.length + 1,
             alpha: inputAlpha,
         });
         setAlphabet(newAlpha);
-        setInputAlpha("");
+        setInputAlpha('');
     };
 
     // * 삭제는 filter 배운 이후!
+    // 글자 삭제
     const deleteAlpha = (targetId) => {
         console.log(targetId); // targetId: 삭제될 요소의 id
 
@@ -65,7 +68,7 @@ export default function Alphabet() {
         // }
         // IME 입력 중에는 이벤트 핸들러의 나머지 로직이 실행되지 않도록 합니다.
 
-        if (e.code === "Enter") {
+        if (e.code === 'Enter') {
             addAlpha();
         }
 
@@ -109,7 +112,8 @@ export default function Alphabet() {
             <button onClick={addAlpha}>ADD</button>
 
             {/* ** filter 배운 이후 */}
-            {/* <ol>
+            {/* 알파벳 삭제하기 */}
+            <ol>
                 {alphabet.map((value) => (
                     <li
                         key={value.id}
@@ -118,7 +122,14 @@ export default function Alphabet() {
                         {value.alpha}
                     </li>
                 ))}
-            </ol> */}
+            </ol>
         </div>
     );
 }
+
+// *concat 예제
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+// let arr3 = arr1.concat(arr2);
+
+// console.log(arr3); // [1, 2, 3, 4, 5, 6]
