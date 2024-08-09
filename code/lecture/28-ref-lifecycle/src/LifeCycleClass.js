@@ -16,16 +16,18 @@ export default class LifeCycleClass extends Component {
         return (
             <>
                 <button onClick={this.changeNumberState}>Plus</button>
-                {/* 자식 컴포넌트 강제 unMount 시키기! (죽여!) */}
                 <button onClick={this.changeVisibleState}>On / Off</button>
                 {this.state.visible && (
                     <LifeCycleClassChild number={this.state.number} />
                 )}
-                {/* 단축 평가 - && true 일때만 실행. */}
-                {/* true || anything // true
-                false || anything // anything
-                true && anything // anything
-                false && anything // false */}
+
+                {/* 단축평가 test 
+                    true && anything // anything // 논리곱
+                    false && anything // false
+                    true || anything // true     // 논리합
+                    false || anything // anything
+                
+                */}
             </>
         );
     }
