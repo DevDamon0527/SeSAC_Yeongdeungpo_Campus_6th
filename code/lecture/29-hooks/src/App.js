@@ -1,5 +1,6 @@
 import './App.css';
 import Faq from './components/Faq';
+import Form from './components/react-hook-form/Form';
 import UseCallbackEx from './components/UseCallbackEx';
 import UseCallbackEx2 from './components/UseCallbackEx2';
 import UseMemoEx from './components/UseMemoEx';
@@ -23,6 +24,9 @@ function App() {
             <hr />
 
             <Faq />
+            <hr />
+
+            <Form />
         </div>
     );
 }
