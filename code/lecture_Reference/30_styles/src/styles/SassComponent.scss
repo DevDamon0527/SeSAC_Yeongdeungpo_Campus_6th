@@ -42,6 +42,15 @@
 
         &.yellow {
             background-color: $color-third;
+
+            border: {
+                color: $color-first;
+                radius: 10px;
+                width: 1px;
+            }
+            border-radius: 10px;
+            border-color: $color-first;
+            border-width: 1px;
         }
 
         &:hover {
