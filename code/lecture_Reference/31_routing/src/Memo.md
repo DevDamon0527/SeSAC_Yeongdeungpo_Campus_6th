@@ -33,7 +33,7 @@
 <Route>: URL 경로에 따라 어떤 컴포넌트를 렌더링할지를 설정합니다. (라우팅 설정 측면)
 useNavigate(): 코드에서 프로그래밍적으로 경로를 변경합니다. (프로그래밍적 경로 변경)
 
-**코드 연습**
+**코드 연습 순서**
 #1. main > produce > Route 지정 후 - url로 바꿔서 접근해보기.
 #2. header 추가 + Link
 #3. productList.js > productpage아래 ProductList 컴포넌트 추가. -> productList에 map 돌리면서 props 넘기기.
