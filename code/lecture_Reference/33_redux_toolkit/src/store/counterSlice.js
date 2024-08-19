@@ -1,6 +1,5 @@
 // src/store/counterReducer.js
 
-
 // (참고)
 /**
  **** 액션 타입 상수 정의가 불필요한 이유 ****
@@ -20,18 +19,18 @@ import { createSlice } from '@reduxjs/toolkit';
 // - 'reducers' : 상태를 업데이트 하는 리듀서 함수 정의
 // - 슬라이스 객체 정의
 const counterSlice = createSlice({
-  name: 'counter', // 즉, plus 액션은 'counter/plus'라는 타입
-  initialState: { number: 100 },
-  reducers: {
-    plus: (state) => { 
-      state.number += 1;  // 상태를 직접 변경 (immer 라이브러리가 내부적으로 사용됨)
-    }, 
-    minus: (state) => {
-      state.number -= 1;
+    name: 'counter', // 즉, plus 액션은 'counter/plus'라는 타입
+    initialState: { number: 100 },
+    reducers: {
+        plus: (state) => {
+            state.number += 1; // 상태를 직접 변경 (immer 라이브러리가 내부적으로 사용됨)
+        },
+        minus: (state) => {
+            state.number -= 1;
+        },
     },
-  },
 });
-// Redux Toolkit은 immer 라이브러리를 사용하여 상태를 직접 변경하는 것처럼 보이지만, 
+// Redux Toolkit은 immer 라이브러리를 사용하여 상태를 직접 변경하는 것처럼 보이지만,
 // 실제로는 불변성을 유지하면서 상태를 업데이트합니다.
 
 export const { plus, minus } = counterSlice.actions;
@@ -47,10 +46,3 @@ export default counterSlice.reducer; // 리듀서 기본으로 내보내기.
 
 // (참고)
 // store/index.js 로 ㄱㄱ
-
-
-
-
-
-
-

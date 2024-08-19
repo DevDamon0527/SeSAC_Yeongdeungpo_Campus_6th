@@ -5,29 +5,29 @@ import { Box1, Box2, Box3, Box4 } from '../App4';
 import { plus, minus } from '../store/counterReducer';
 
 export const Box1Container = () => {
-  return <Box1 />;
+    return <Box1 />;
 };
 
 export const Box2Container = () => {
-  return <Box2 />;
+    return <Box2 />;
 };
 
 export const Box3Container = () => {
-  return <Box3 />;
+    return <Box3 />;
 };
 
 // Box4Container: Redux 상태와 디스패치를 Box4 컴포넌트에 전달
 export const Box4Container = () => {
-  const number = useSelector((state) => state.counter.number);
-  const dispatch = useDispatch();
+    const number = useSelector((state) => state.counter.number);
+    const dispatch = useDispatch();
 
-  return (
-    <Box4
-      number={number}
-      onPlus={() => dispatch(plus())}  // plus 액션을 디스패치
-      onMinus={() => dispatch(minus())}  // minus 액션을 디스패치
-    />
-  );
+    return (
+        <Box4
+            number={number}
+            onPlus={() => dispatch(plus())} // plus 액션을 디스패치
+            onMinus={() => dispatch(minus())} // minus 액션을 디스패치
+        />
+    );
 };
 
 // 컨테이너 컴포넌트 & 프레젠테이셔널 컴포넌트
