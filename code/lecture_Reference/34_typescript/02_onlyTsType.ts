@@ -191,9 +191,86 @@ enum Score {
 interface Team extends Crew {
     position: string;
     readonly personnel?: number; // 없어도 되는 값 처리. 요로케
-    [grade: number]: string;
+    // [grade: number]: string;
+    [grade: number]: Score;
+
     // **인덱스 시그니처
+    // - 객체가 어떤 키로든 접근할 수 있도록 허용하고, 키와 그에 대응하는 값의 타입을 정의할 수 있는 방법을 제공.
     // [grade: number] - 숫자인 키(key)
     // [grade: number]: string - 숫자 키를 가진 객체가 문자열 값을 가질 것임을 명시.
     // 기존 속성과 시그니처 간의 일관성을 유지하는 것이 중요.
 }
+const first: Team = {
+    name: 'Damon',
+    age: 20,
+    exp: true,
+    position: 'FrontEnd',
+    1: Score.Aplus,
+    // 1: 'A'
+};
+console.log(first);
+
+// 값 변경 (점 접근법, 대괄호 접근법)
+first.position = 'Backend';
+first['age'] = 25;
+console.log(first);
+
+// ###################################################
+// ** type vs enum
+type Money1 = 500 | 700 | 1000; // 유니언 타입
+enum Money2 {
+    a = 500,
+    b = 700,
+    c = 1000,
+}
+
+const mon1: Money1 = 500;
+const mon2: Money2 = Money2.a; // enum의 값. // 이름 있는 상수
+console.log(mon1);
+console.log(mon2);
+/**
+ * 목적:
+    type: 복잡한 타입을 정의하고, 코드에서 타입을 재사용하고 가독성을 높이기 위해 사용됩니다.
+    enum: 값들의 집합을 정의하고 이를 상수처럼 사용하기 위해 사용됩니다.
+ */
+
+// ** 교차 타입 : 두개 이상의 타일을 합치는 것
+interface Toy {
+    name: string;
+    start(): void;
+}
+
+interface Car {
+    name: string; // 공통된 속성을 가지고 있어도 상관없음.
+    color: string;
+    price: number;
+}
+
+// type ToyCar = Toy & Car; // '&' 연산자 사용
+interface ToyCar extends Toy, Car {} // 인터페이스 사용한 교차 타입
+const toyCar: ToyCar = {
+    name: 'tayo',
+    start() {
+        console.log('출발~~'); // 함수도 가능.
+    },
+    color: 'blue',
+    price: 5000,
+};
+console.log(toyCar);
+
+// ** type 사용
+type Gender = 'F' | 'M';
+type Person = {
+    name: string;
+    age?: number;
+    like?: string[];
+    // gender: string;
+    gender: Gender; // 위에서 정의한 'Gender' 타입 가짐. = 'F', 'M' 둘 중 하나여야 함.
+};
+
+const IU: Person = {
+    name: 'IU',
+    gender: 'F', // Gender 타입에 선언된 값만 넣을 수 있음.
+    // age, like 선택
+};
+console.log(IU);

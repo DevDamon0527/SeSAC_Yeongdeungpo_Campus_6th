@@ -7,3 +7,11 @@ console.log('num >>>> ', num);
 // node index.ts 해보기 ( TS에서 거절 당함 )
 // 1. npx tsx [ts파일명] : ts -> js 변환  => .js가 복제됨!
 // 2. node [js파일명] : js로 변환된 파일 실행
+
+function jsPrint(a, b) {
+    console.log(a);
+    console.log(b);
+}
+// jsPrint(1, 2, 3);
+// jsPrint(1, 2);
+jsPrint(1);
