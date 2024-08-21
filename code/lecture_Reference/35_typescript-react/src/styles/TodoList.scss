@@ -1,0 +1,5 @@
+/* TodoList.css */
+.completed {
+    text-decoration: line-through; /* 취소선 추가 */
+    color: grey; /* 완료된 항목의 색상 변경 (선택적) */
+}

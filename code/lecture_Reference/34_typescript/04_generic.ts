@@ -18,6 +18,11 @@ function strArrLen(arr: string[]): number {
 }
 console.log(strArrLen(['1', '2', '3', '4'])); // 4
 
+// (참고)
+// - Ex1, Ex2 처럼 다른 타입의 배열의 길이를 검사하는 함수
+// - 다른 타입마다 계속 만들것인가..?
+// - 리턴되는 값이 string, number, boolean, .. 모든 값이 들어 올 수 있는 함수라면?
+
 // #1. 제너릭 기본 사용법
 
 // <T>를 이용해서 매개변수를 선언하는 공간을 하나 더 만듦.
@@ -25,12 +30,21 @@ console.log(strArrLen(['1', '2', '3', '4'])); // 4
 function arrLen<T>(arr: T[]): number {
     return arr.length;
 }
+// T[]: T에 대응되는 자료형의 배열
 console.log(arrLen<string>(['1', '2', '3', '4'])); // 4
 console.log(arrLen<number>([1, 2, 3])); // 3
 console.log(arrLen<string | number>(['원', 2, '3', 4])); // 4
 
 // #################################################
 // Q) 빨간 밑줄 사라지도록 함수 완성하기.
+// function prinsSome(x, y) {
+//     console.log(x, y);
+// }
+// printSome<>('hi', 'hello');
+// prinsSome<>(100, 200);
+// printSome<>([true, false], [false, false]);
+
+// A)
 function printSome<T>(x: T, y: T): void {
     console.log(x, y);
 }
@@ -50,6 +64,7 @@ printSome2<string, number>('1', 1);
 // #################################################
 // interface와 generic
 // Ex1)
+// Phone 인터페이스의 옵션이 여러 타입으로 정의될 수 있다면? 제너릭!
 interface Phone<T> {
     company: string;
     createdAt: Date;
