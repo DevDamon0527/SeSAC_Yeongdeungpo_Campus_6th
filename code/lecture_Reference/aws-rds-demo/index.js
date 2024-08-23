@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
 const userModel = require('./models/User');
+const PORT = 8000;
+require('dotenv').config();
+// console.log(process.env.DB_USER);
+
 // Sequelize 연결 설정
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -32,7 +36,6 @@ app.post('/api/users', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
 sequelize.sync({ force: false }).then(() => {
     console.log('테이블 생성 완료!');
 
