@@ -22,7 +22,7 @@ const User = userModel(sequelize);
 // 미들웨어 설정
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.send('안녕하세요!');
+    res.send('안녕하세요!!!!!');
 });
 
 app.post('/api/users', async (req, res) => {
