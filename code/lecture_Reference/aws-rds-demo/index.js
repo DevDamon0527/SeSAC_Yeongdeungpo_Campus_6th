@@ -19,7 +19,8 @@ const sequelize = new Sequelize(
 // 모델 초기화
 const User = userModel(sequelize);
 
-// 미들웨어 설정
+// 미들웨어 설정ls
+
 app.use(express.json());
 app.get('/', (req, res) => {
     res.send('안녕하세요!!!!!');

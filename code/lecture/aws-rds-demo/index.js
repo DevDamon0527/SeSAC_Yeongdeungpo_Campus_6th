@@ -1,9 +1,10 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
 const userModel = require('./models/User');
 const PORT = 8000;
+require('dotenv').config();
+console.log(process.env.DB_USER);
 
 // Sequelize 연결 설정
 const sequelize = new Sequelize(
@@ -18,7 +19,8 @@ const sequelize = new Sequelize(
 // 모델 초기화
 const User = userModel(sequelize);
 
-// 미들웨어 설정
+// 미들웨어 설정ls
+
 app.use(express.json());
 app.get('/', (req, res) => {
     res.send('안녕하세요!!!!!');
