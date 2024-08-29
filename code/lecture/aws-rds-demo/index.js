@@ -41,6 +41,6 @@ sequelize.sync({ force: false }).then(() => {
     console.log('테이블 생성 완료!');
 
     app.listen(PORT, () => {
-        console.log(`http//localhost:${PORT}`);
+        console.log(`http://localhost:${PORT}`);
     });
 });
