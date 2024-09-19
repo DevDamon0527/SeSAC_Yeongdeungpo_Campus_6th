@@ -10,8 +10,8 @@
         <h1>로그인</h1>
         <form name="login-form">
             <input type="text" , id="id" , placeholder="ID" /><br />
-            <input type="password" id="pwd" placeholder="PW" /> <br />
-            <button type="buttion" onclick="login()">로그인</button>
+            <input type="password" id="pw" placeholder="PW" /><br />
+            <button type="button" onclick="login()">로그인</button>
         </form>
 
         <script>
@@ -30,7 +30,7 @@
 
                 if (res.data.result) {
                     localStorage.setItem('login', res.data.token);
-                    documnet.location.href = '/';
+                    document.location.href = '/';
                 } else {
                     // 아이디나 비밀번호가 틀렸을 경우
                     alert(res.data.message);
