@@ -29,6 +29,10 @@
                 });
 
                 if (res.data.result) {
+                    // 로컬 버전.
+                    // localStorage.setItem('login', res.data.token);
+
+                    // 세션 버전.
                     document.location.href = '/';
                 } else {
                     // 아이디나 비밀번호가 틀렸을 경우
