@@ -29,7 +29,6 @@
                 });
 
                 if (res.data.result) {
-                    localStorage.setItem('login', res.data.token);
                     document.location.href = '/';
                 } else {
                     // 아이디나 비밀번호가 틀렸을 경우
