@@ -46,6 +46,56 @@ public class UserService {
         return convertToDTO(user);
     }
 
+    // 새 사용자 생성
+    public void createUser(UserDTO userDTO) {
+        User user = convertToEntity(userDTO);
+        userRepository.save(user);
+    }
+
+    // 사용자 정보 업데이트
+    public void updateUser(Long id, UserDTO userDTO) {
+        User user = convertToEntityWithId(id, userDTO);
+        userRepository.save(user);
+    }
+
+    // 특정 ID 의 사용자 삭제
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+
+    ///////////////////////////////////////////////////////////////////
+    // 1. 사용자 이름으로 n 명 조회
+    public List<UserDTO> getUserByUsername(String username) {
+        List<User> users = userRepository.findByUsername(username);
+        List<UserDTO> userDTOs = new ArrayList<>();
+        for (User user:users) {
+            userDTOs.add(convertToDTO(user));
+        }
+
+        return userDTOs;
+    }
+
+    // 2. 검색
+    public List<UserDTO> searchUsers(String keyword) {
+//        List<User> users = userRepository.findByUsernameContainingOrEmailContaining(keyword, keyword);
+//        // - 첫번째 인자는 username 을 검색하기 위한 keyword 매개변수
+//        // - 두번째 인자는 email 을 검색하기 위한 keyword 매개변수
+        List<User> users = userRepository.findByUsernameContainingOrEmailContaining(keyword);
+        List<UserDTO> userDTOs = new ArrayList<>();
+        for (User user:users) {
+            userDTOs.add(convertToDTO(user));
+        }
+
+        return userDTOs;
+    }
+
+    // 3. 이름 존재 여부
+    public boolean isUsernameExists(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    ///////////////////////////////////////////////////////////////////
+
     // entity(domain) to dto
     private UserDTO convertToDTO(User user) {
         // builder 패턴을 이용해 dto 객체 생성
@@ -54,6 +104,24 @@ public class UserService {
                 .email(user.getEmail())
                 .username(user.getUsername())
                 .id(user.getId())
+                .build();
+    }
+
+    // dto to entity(domain)
+    private User convertToEntity(UserDTO dto) {
+        return User.builder()
+                .id(dto.getId())
+                .username(dto.getUsername())
+                .email(dto.getEmail())
+                .build();
+    }
+
+    // dto to entity(domain) with id
+    private User convertToEntityWithId(Long id, UserDTO dto) {
+        return User.builder()
+                .id(id)
+                .username(dto.getUsername())
+                .email(dto.getEmail())
                 .build();
     }
 
