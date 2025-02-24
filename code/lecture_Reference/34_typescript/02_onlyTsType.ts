@@ -55,10 +55,11 @@ let most2: championInfo = [2, 'Timo', 100000];
 
 // ###################################################
 // ** Enum **
-// (참고)
 // - 사용하는 이유. Why?
 // 1. 분야별로 종류를 정의하여 명확하게 사용.
+//    ㄴ사용자 권한 분야만 따로 모아서 정의(열거)해두고, 의미를 명확하게 파악하여 사용할 수 있다.
 // 2. 하드코딩의 실수를 줄이기 위해.
+// (참고)
 // 관리자 = 0, 유저 = 1, 게스트 = 2로 관리,
 // 개발자는 === 0 이라는걸 기억해야함.
 // 관리하는 값이 많아지면 실수 발생 위험.
@@ -89,6 +90,7 @@ enum Cafe {
     americano = '아메리카노',
     latte = '카페라떼',
 }
+// 점 접근.
 console.log(Cafe.americano); // 아메리카노
 console.log(Cafe.latte); // 카페라떼
 
@@ -109,7 +111,19 @@ console.log(Cake);
  *
  * 'TS'의 'enum'은 JS로 컴파일 될 때, 양방향 매핑 지원을 위해 변환.
  * 이 변환 과정에서 'enum' 값과 키가 모두 포함된 객체가 생성되며, 로그에 양방향 매핑이 포함된 형태로 출력.
- * ex) Food[Food["pasta"] = 4000] = "pasta";
+ * 
+ * ex) enum Food {
+            pasta = 4000,
+            pizza = 5000,
+            burger = 3000
+        }
+        console.log(Food.pasta); // 4000  (키를 통해 값을 찾음)
+        console.log(Food[4000]); // "pasta" (값을 통해 키를 찾음)
+
+        *컴파일 후 JavaScript 코드 (변환된 형태)
+        Food[Food["pasta"] = 4000] = "pasta";
+        Food[Food["pizza"] = 5000] = "pizza";
+        Food[Food["burger"] = 3000] = "burger";
  *
  * ##2. 'enum'은 한번 생성되면, 속성 추가 및 수정 불가.
  *

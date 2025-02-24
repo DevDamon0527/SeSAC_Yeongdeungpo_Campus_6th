@@ -11,14 +11,15 @@
 // - 스크립트 어디에서든 호출 할 수 있다.
 // - "function" 키워드를 사용하여 함수를 선언하는 방식이다.
 
-function helloWorld() { // 함수 정의
+function helloWorld() {
+    // 함수 정의
     // return 키워드 생략 가능
-    console.log("Hello, world");
+    console.log('Hello, world');
 }
 helloWorld(); // 함수 호출
 
 function helloWorld2() {
-    return 'Hello, World! 2'
+    return 'Hello, World! 2';
 }
 
 // return? (반환값)
@@ -28,7 +29,6 @@ function helloWorld2() {
 // (return 다음에 코드 더 작성 의미 x)
 
 console.log(helloWorld2());
-
 
 // #2. 함수 표현식 (Function Expression)
 // - 변수에 익명 함수를 할당(저장)하는 형태.
@@ -46,12 +46,12 @@ console.log(helloWorld2());
 // sayHello();
 // hello();
 
-const helloWorld3 = function(){
-    console.log("Hello, World! 3");
-}
-const helloWorld4 = function() {
-    return "Hello, World! 4";
-}
+const helloWorld3 = function () {
+    console.log('Hello, World! 3');
+};
+const helloWorld4 = function () {
+    return 'Hello, World! 4';
+};
 
 helloWorld3();
 console.log(helloWorld4());
@@ -59,7 +59,7 @@ helloWorld3();
 helloWorld3();
 helloWorld3();
 helloWorld3();
-console.log("----------------");
+console.log('----------------');
 // => 함수는 "여러 번" 호출이 가능하다!.
 
 ////////////////////////////////
@@ -68,18 +68,18 @@ console.log("----------------");
 function food(text) {
     return text;
 }
-console.log(food("제육덮밥")); // 제육덮밥
+console.log(food('제육덮밥')); // 제육덮밥
 
-const pizza = "피자는 역시 하와이안 피자!";
-console.log(food(pizza)); 
+const pizza = '피자는 역시 하와이안 피자!';
+console.log(food(pizza));
 
 const colaPrice = 2000;
-console.log(food(colaPrice)); // 2000 => type? ==> number; 
+console.log(food(colaPrice)); // 2000 => type? ==> number;
 // 매개변수는 어떤 데이터 타입이든 상관없다.
 
 // 매개변수 2개
 function music(name, title) {
-    return `${name} - ${title}`
+    return `${name} - ${title}`;
 }
 
 console.log(music('아이유', '잔소리'));
@@ -113,16 +113,16 @@ console.log(square(3)); // 9
 const triangle = (base, height) => {
     const area = (base * height) / 2;
     return area;
-}
+};
 console.log(triangle(3, 4)); // 6
 
-// 호이스팅(hoisting) -> 함수, 변수
+// * 호이스팅(hoisting) -> 함수, 변수
 // - JS에서 변수 및 함수 선언이 해당 범위의 맨 위로 끌어올려지는 현상
 // - "함수 선언문"이 호이스팅!
 
 sayHello(); // 함수 "호출"을 "정의" 보다 먼저 했죠?
 function sayHello() {
-    console.log("hello~");
+    console.log('hello~');
 }
 
 // -- 정상 출력.
@@ -133,5 +133,5 @@ function sayHello() {
 // - 변수에 함수가 할당되기 때문에 그 이후에만 호출 가능!.
 // sayHello2(); // ReferenceError
 const sayHello2 = () => {
-    console.log("hello2");
-}
+    console.log('hello2');
+};

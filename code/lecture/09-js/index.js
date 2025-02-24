@@ -8,22 +8,17 @@
 // const [x,y,z, alpha] = arr2;
 // console.log(x,y,z, alpha)
 
-let num1 =10;
-let num2 =20;
+let num1 = 10;
+let num2 = 20;
 // 변수값의교환 , 2개의 변수값을 교환할때 제3의 변수사용, 지금 x
-// console.log('Before : ', num1, num2)
+console.log('Before : ', num1, num2);
 // [num2, num1] = [num1, num2];
-// console.log('After : ', num1, num2)
-
-
-
-
+console.log('After : ', num1, num2);
 
 // 디폴트값을 지정할 수 있다.
 // const lists = ['apple', 'grape'];
 // [f1, f2, f3='orange'] = lists;
 // console.log(f1, f2, f3);
-
 
 // 객체 , object : key 와 value , {}
 
@@ -50,27 +45,18 @@ let num2 =20;
 // undefined : 변수는 할당되었지만 (초기화) , 값이 할당x
 // let a = 20;
 
-const lectureInfo ={
-    name :'Coding on',
-    part :'web',
-    leader:'Kim',
-}
+const lectureInfo = {
+    name: 'Coding on',
+    part: 'web',
+    leader: 'Kim',
+};
 
 // console.log(lectureInfo)
-function getInfo(lecture){
-    const {name, part, leader} = lecture;
-    const output = `${name} 강의는 ${part} 개발을 공부합니다. 수업의 리더는 ${leader} 입니다.`
+function getInfo(lecture) {
+    const { name, part, leader } = lecture;
+    const output = `${name} 강의는 ${part} 개발을 공부합니다. 수업의 리더는 ${leader} 입니다.`;
     return output;
 }
 
 const result = getInfo(lectureInfo);
-console.log(result)
-
-
-
-
-
-
-
-
-
+console.log(result);

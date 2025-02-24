@@ -30,7 +30,7 @@ console.log('---------------');
 // 순서가 있는 구조 반복에 적합.
 // 배열 'alphabets'의 각 요소를 반복하면서 'alpha' 변수에 순서대로 할당하고, 각각 요소에 대해 반복문 블록 실행
 for (let alpha of alphabets) {
-    console.log('alpha > ',alpha);
+    console.log('alpha > ', alpha);
 }
 console.log('---------------');
 
@@ -38,7 +38,6 @@ console.log('---------------');
 // 배열의 각 요소에 대해 지정된 함수를 실행.
 // 일반적으로 배열을 순회하면서 각 요소에 대해 동일한 작업을 수행 할 때 사용
 // 각 요소에 대해 함수가 호출될 때마다, 해당 요소가 함수의 인자로 전달됩니다.
-
 
 alphabets.forEach(function (alpha) {
     // alpha: currentValue를 의미. 반복하고 있는 현재 요소
@@ -86,21 +85,20 @@ console.log('---------------');
 // #1. map()
 // - 배열의 각 요소에 대해 지정된 함수를 호출하고, 그 결과로 새로운 배열을 생성
 
-// 참고 (설명용) 
+// 참고 (설명용)
 // function은 콜백 함수를 정의하는 부분입니다
 // 여기서 콜백 함수란, map() 메서드가 호출될 때 배열의 각 요소에 대해 실행되는 함수를 말합니다
 // map() 메서드는 배열의 각 요소를 순회하면서 콜백 함수를 호출하고, 그 결과를 새로운 배열로 반환합니다.
 
-
-// 구체적으로 콜백 함수는 map() 메서드에 인수로 전달되며, 
-// 각 요소를 처리하는 함수로서 배열의 각 요소를 순회할 때마다 호출됩니다. 
+// 구체적으로 콜백 함수는 map() 메서드에 인수로 전달되며,
+// 각 요소를 처리하는 함수로서 배열의 각 요소를 순회할 때마다 호출됩니다.
 // 이 콜백 함수는 배열의 각 요소를 인자로 받아서 원하는 작업을 수행하고 그 결과를 반환합니다.
 
 // num은 콜백 함수의 매개변수입니다
 // 이는 현재 처리 중인 배열의 요소를 나타냅니다
 // 이 매개변수를 활용하여 각 요소에 대해 원하는 작업을 수행할 수 있습니다.
 const numbers = [1, 2, 3, 4, 5];
-const doubledNumbers = numbers.map(function(num) {
+const doubledNumbers = numbers.map(function (num) {
     return num * 2;
 });
 console.log(doubledNumbers); // [2, 4, 6, 8, 10]
@@ -108,7 +106,7 @@ console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 // #2. filter()
 // - 배열의 각 요소에 대해 지정된 함수를 호출하고 , 그 결과가 'true'인 요소들로 이루어진 새로운 배열 생성
 
-const pracNumbers = numbers.filter(function(num) {
+const pracNumbers = numbers.filter(function (num) {
     return num % 2 === 0;
 });
 console.log(pracNumbers); // [2, 4]
@@ -118,11 +116,10 @@ console.log(pracNumbers); // [2, 4]
 // - 조건에 만족 -> 해당 요소 반환
 // - 조건에 불만족 -> undefined 반환
 
-const pracNumbers2 = numbers.find(function(num) {
+const pracNumbers2 = numbers.find(function (num) {
     return num % 2 === 0;
 });
 console.log(pracNumbers2); // 2
-
 
 // ---- 참고)
 // 익명함수로 정의
@@ -135,14 +132,14 @@ console.log(pracNumbers2); // 2
 // for in 반복문
 // 객체의 key를 반복 할 수 있는 구문
 
-const dog = { 
-    name: '태풍', 
-    gender: 'm', 
-    info: 'cute'
+const dog = {
+    name: '태풍',
+    gender: 'm',
+    info: 'cute',
 }; // (key, value)
 
-for (let key in dog) {  
-    console.log(key, dog[key]); // 객체의 각 속성(key, value)에 대해 실행할 코드 
+for (let key in dog) {
+    console.log(key, dog[key]); // 객체의 각 속성(key, value)에 대해 실행할 코드
     // key: key
     // value: dog[key]
 }
