@@ -1,9 +1,0 @@
-// 파일이름 index.js
-function sayHi(name){
-   console.log('Hi ' + name)
-}
-sayHi("Hong")
-> 터미널에서 실행
-> node index.js
-// 파일이름 index.js -> app.js 바꿔서 실행
-> node app.js
